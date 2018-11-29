@@ -9,7 +9,6 @@ public class methods
 {
     public static String getResponse(String statement)
     {
-        System.out.println("hey stoopid");
         return "wump";
     }
     
