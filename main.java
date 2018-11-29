@@ -10,6 +10,10 @@ public class main
     
     public static String findHighPriority(String statement)
     {
+        for(double x = 100000000.0; x < 10000000000000.0; x = x + 1000.0)
+        {
+            System.out.println("hey gusy");
+        }
         return "wip";
     }
     
