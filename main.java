@@ -5,17 +5,17 @@ public class main
 {
     public static String getResponse(String statement)
     {
-        
+        return "wip";
     }
     
     public static String findHighPriority(String statement)
     {
-        
+        return "wip";
     }
     
     public static String findLowPriority(String statement)
     {
-        
+        return "wip";
     }
     
     public static void remember(String statement)
@@ -25,12 +25,12 @@ public class main
     
     public static String getNonCommitalResponse(String statement)
     {
-        
+        return "wip";
     }
     
     public static String maybeAddName(String statement)
     {
-        
+        return "wip";
     }
     
     private int findKeyword(String statement, String goal, int startPos)
