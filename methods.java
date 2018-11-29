@@ -9,6 +9,7 @@ public class methods
 {
     public static String getResponse(String statement)
     {
+        System.out.println("u da real stupid");
         return "wump";
     }
     
