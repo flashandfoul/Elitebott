@@ -20,7 +20,8 @@ public class main
     
     public static void remember(String statement)
     {
-        
+        int x=0;
+        for(int c=0;c<8;c++){x++;}
     }
     
     public static String getNonCommitalResponse(String statement)
