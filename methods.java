@@ -12,28 +12,28 @@ public class methods
         return "wump";
     }
     
-    public static String findHighPriority(String statement)
+    private static String findHighPriority(String statement)
     {
         
         return "wip";
     }
     
-    public static String findLowPriority(String statement)
+    private static String findLowPriority(String statement)
     {
         return "wip";
     }
     
-    public static void remember(String statement)
+    private static void remember(String statement)
     {
         
     }
     
-    public static String getNonCommitalResponse(String statement)
+    private static String getNonCommitalResponse(String statement)
     {
         return "wip";
     }
     
-    public static String maybeAddName(String statement)
+    private static String maybeAddName(String statement)
     {
         return "wip";
     }
