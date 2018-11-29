@@ -5,7 +5,7 @@ public class main
 {
     public static String getResponse(String statement)
     {
-        return "wup";
+        return "wump";
     }
     
     public static String findHighPriority(String statement)
