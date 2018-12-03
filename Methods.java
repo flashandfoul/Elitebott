@@ -127,7 +127,7 @@ public class Methods
         // 1/7 of the time, Elitebott will add the user's name to the end of the response.
         if (randy.nextInt(7) == 6){
         
-        }else
+        } else
         return response;
     }
     
