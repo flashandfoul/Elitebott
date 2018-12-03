@@ -1,7 +1,7 @@
 /**
  * Write a description of class methods here.
  *
- * @We broke it
+ * @We did it!
  * @version (a version number or a date)
  */
 public class Methods
