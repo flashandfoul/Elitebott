@@ -35,11 +35,16 @@ public class Methods
             {
                 response = reader.next();
                 response.replaceAll("_", " ");
+                if(findKeyword(response, "START CONVERSATION", 0) > -1)
+                {
+                    Conversation.startConversation(response.substring(19));
+                    return Conversation.getResponse();
+                }
                 return response;
             } else
                 reader.next();
         }
-        return "wip";
+        return findSimpleSentenceStructure(statement);
     }
     
     private static String findLowPriority(String statement)
