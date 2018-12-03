@@ -64,6 +64,7 @@ public class Methods
         int exclamPsn = findKeyword(statement, "!",10);
         int commaPsn = findKeyword(statement, ",",10);
         int dashPsn = findKeyword(statement, "-",10);
+        int questPsn = findKeyword(statement, "?",10);
         
         //Here we find the first of these things to appear.
         int lowest = statement.length();
@@ -77,14 +78,19 @@ public class Methods
         lowest = commaPsn;
         if (dashPsn > 0 && exclamPsn < lowest)
         lowest = dashPsn;
+        if (questPsn > 0 && questPsn < lowest)
+        lowest = questPsn;
         
-        String name = statement.substring(11,lowest);
+        //Name is a comma and a name.
+        String name = ","+statement.substring(11,lowest);
     }
     
     public static String findSimpleSentenceStructure(String statement)
     {
-        //initialize local response variable
+        //initialize local variables
         String simpleResponse = "";
+        int psnYou = findKeyword(statement, "you", 0);
+        int psnI = findKeyword(statement, "I", 0);
         
         //search for simple sentence structures and set response accordingly
         if (findKeyword(statement, "I want to", 0) >= 0)
@@ -95,26 +101,34 @@ public class Methods
         {
             simpleResponse = SimpleStructure.transformIWantStatement(statement);
         }
-        int psnYou = findKeyword(statement, "you", 0);
-        int psnI = findKeyword(statement, "I", 0);
-        if (psnYou >= 0
-                && findKeyword(statement, "me", psnYou) >= 0)
+        else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
         {
             simpleResponse = SimpleStructure.transformYouMeStatement(statement);
         }
-        else if (psnI >= 0
-                && findKeyword(statement, "you", psnI) >= 0)    
+        else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
         {
             simpleResponse = SimpleStructure.transformIYouStatement(statement);
         }
-        
+        else if (findKeyword(statement, "I will", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformIWillStatement(statement);
+        }
+        else if (findKeyword(statement, "I like", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformILikeStatement(statement);
+        }
         //return forumlated response
         return simpleResponse;
     }
     
     private static String maybeAddName(String response)
     {
-        return "wip";
+        Random randy = new Random();
+        // 1/7 of the time, Elitebott will add the user's name to the end of the response.
+        if (randy.nextInt(7) == 6){
+        
+        }else
+        return response;
     }
     
     public static int findKeyword(String statement, String goal, int startPos)
