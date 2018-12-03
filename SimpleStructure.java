@@ -1,8 +1,10 @@
 
 /**
- * Write a description of class SimpleStructure here.
- *
- * @author (your name)
+ * Class SimpleStructure is a compilation of methods that
+ * the Methods.findSimpleSentenceStructure() calls for in
+ * order to form simple sentence structures.
+ * 
+ * @aj
  * @version (a version number or a date)
  */
 public class SimpleStructure
