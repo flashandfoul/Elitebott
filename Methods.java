@@ -73,6 +73,7 @@ public class Methods
         {
             simpleResponse = SimpleStructure.transformIWantStatement(statement);
         }
+        
         int psnYou = findKeyword(statement, "you", 0);
         int psnI = findKeyword(statement, "I", 0);
         if (psnYou >= 0
@@ -85,7 +86,10 @@ public class Methods
         {
             simpleResponse = SimpleStructure.transformIYouStatement(statement);
         }
-        
+        else if (findKeyword(statement, "I will", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformIWillStatement(statement);
+        }
         //return forumlated response
         return simpleResponse;
     }
