@@ -29,7 +29,9 @@ public class Methods
     
     private static void remember(String statement)
     {
-        //Look for "My name is "
+        //Look for "My name is ".
+        //namePsn will be zero if the statement starts with "my name is "
+        //We will only use 
         int namePsn = findKeyword(statement,"My name is ", 0);
         
     }
