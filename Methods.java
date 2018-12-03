@@ -29,9 +29,9 @@ public class Methods
     
     private static void remember(String statement)
     {
-        if (){
+        //Look for "My name is "
+        int namePsn = findKeyword(statement,"My name is ", 0);
         
-        }
     }
     
     private static String getNonCommitalResponse(String statement){
@@ -48,7 +48,7 @@ public class Methods
         return "wip";
     }
     
-    private int findKeyword(String statement, String goal, int startPos)
+    private static int findKeyword(String statement, String goal, int startPos)
     {
         String phrase = statement.trim().toLowerCase();
         goal = goal.toLowerCase();
