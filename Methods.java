@@ -29,14 +29,11 @@ public class Methods
     
     private static void remember(String statement)
     {
-        //Look for "My name is "
+        //Look for "My name is ".
+        //namePsn will be zero if the statement starts with "my name is ".
         int namePsn = findKeyword(statement,"My name is ", 0);
-        
-    }
-    
-    //Aidan's very bad method
-    private static String getNonCommitalResponse(String statement){
-        return "a";
+        //Finds the first space after "My name is ".
+        int spacePsn = findKeyword(statement, " ",10);
     }
     
     public static String findSimpleSentenceStructure(String statement)
