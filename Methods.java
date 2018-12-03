@@ -28,7 +28,9 @@ public class Methods
     
     private static void remember(String statement)
     {
+        if {
         
+        }
     }
     
     private static String getNonCommitalResponse(String statement)
