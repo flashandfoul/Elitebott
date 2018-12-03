@@ -11,8 +11,9 @@ public class Methods
     {
         // CONVERSATION CLASS WIP
         if(Conversation.inConversation())
-            return Conversation.getCurrentConversation().getResponse();
-        return "wip";
+            return maybeAddName(Conversation.getCurrentConversation().getResponse());
+        Methods.remember(statement);
+        return maybeAddName(findHighPriority(statement));
     }
     
     private static String findHighPriority(String statement)
@@ -28,12 +29,14 @@ public class Methods
     
     private static void remember(String statement)
     {
+        //Look for "My name is "
+        int namePsn = findKeyword(statement,"My name is ", 0);
         
     }
     
-    private static String getNonCommitalResponse(String statement)
-    {
-        return "wip";
+    //Aidan's very bad method
+    private static String getNonCommitalResponse(String statement){
+        return "a";
     }
     
     public static String findSimpleSentenceStructure(String statement)
@@ -64,7 +67,7 @@ public class Methods
         return "wip";
     }
     
-    private int findKeyword(String statement, String goal, int startPos)
+    private static int findKeyword(String statement, String goal, int startPos)
     {
         String phrase = statement.trim().toLowerCase();
         goal = goal.toLowerCase();
