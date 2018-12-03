@@ -10,9 +10,8 @@
 public class SimpleStructure
 {
     //Methods called from findSimpleSentenceStructure()
-    
-    
-    private String transformIWantToStatement(String statement)
+
+    public String transformIWantToStatement(String statement)
     {
         //  Remove the final period, if there is one
 	statement = statement.trim();
@@ -29,7 +28,7 @@ public class SimpleStructure
 	return "What would it mean to " + restOfStatement + "?";
     }
     
-    private String transformIWantStatement(String statement)
+    public String transformIWantStatement(String statement)
     {
 	//  Remove the final period, if there is one
 	statement = statement.trim();
@@ -47,5 +46,23 @@ public class SimpleStructure
 		restOfStatement = "me";
 	}
 	return "Would you really be happy if you had " + restOfStatement + "?";  
+    }
+    
+    public String transformYouMeStatement(String statement)
+    {
+	//  Remove the final period, if there is one
+	statement = statement.trim();
+	String lastChar = statement.substring(statement.length() - 1);
+		
+	if (lastChar.equals("."))
+	{
+		statement = statement.substring(0, statement.length() - 1);
+	}
+		
+	int psnOfYou = Methods.findKeyword (statement, "you", 0);
+	int psnOfMe = Methods.findKeyword (statement, "me", psnOfYou + 3);
+		
+	String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+	return "What makes you think that I " + restOfStatement + " you?";
     }
 }
