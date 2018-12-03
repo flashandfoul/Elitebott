@@ -38,6 +38,11 @@ public class Methods
         return "wip";
     }
     
+    public static String findSimpleSentenceStructure(String statement)
+    {
+       return "wup";   
+    }
+    
     private static String maybeAddName(String statement)
     {
         return "wip";
