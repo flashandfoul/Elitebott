@@ -34,6 +34,7 @@ public class Methods
         
     }
     
+    //Aidan's very bad method
     private static String getNonCommitalResponse(String statement){
         return "a";
     }
