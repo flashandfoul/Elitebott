@@ -11,8 +11,9 @@ public class Methods
     {
         // CONVERSATION CLASS WIP
         if(Conversation.inConversation())
-            return Conversation.getCurrentConversation().getResponse();
-        return "wip";
+            return maybeAddName(Conversation.getCurrentConversation().getResponse());
+        Methods.remember(statement);
+        return maybeAddName(findHighPriority(statement));
     }
     
     private static String findHighPriority(String statement)
