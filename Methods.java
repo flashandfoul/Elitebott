@@ -42,6 +42,7 @@ public class Methods
         int exclamPsn = findKeyword(statement, "!",10);
         int commaPsn = findKeyword(statement, ",",10);
         int dashPsn = findKeyword(statement, "-",10);
+        int questPsn = findKeyword(statement, "?",10);
         
         //Here we find the first of these things to appear.
         int lowest = statement.length();
@@ -55,7 +56,10 @@ public class Methods
         lowest = commaPsn;
         if (dashPsn > 0 && exclamPsn < lowest)
         lowest = dashPsn;
+        if (questPsn > 0 && questPsn < lowest)
+        lowest = questPsn;
         
+        //Name is a comma and a name.
         String name = ","+statement.substring(11,lowest);
     }
     
@@ -93,8 +97,11 @@ public class Methods
     private static String maybeAddName(String response)
     {
         Random randy = new Random();
+        // 1/7 of the time, Elitebott will add the user's name to the end of the response.
+        if (randy.nextInt(7) == 6){
         
-        return "wip";
+        }else
+        return response;
     }
     
     public static int findKeyword(String statement, String goal, int startPos)
