@@ -1,3 +1,7 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.io.*;
+
 /**
  * Write a description of class methods here.
  *
@@ -18,7 +22,6 @@ public class Methods
     
     private static String findHighPriority(String statement)
     {
-        
         return "wip";
     }
     
