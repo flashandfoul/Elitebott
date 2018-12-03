@@ -102,7 +102,7 @@ public class SimpleStructure
 	}
 	
 	int psn = Methods.findKeyword (statement, "I will", 0);
-	String restOfStatement = statement.substring(psn + 9).trim();
+	String restOfStatement = statement.substring(psn + 7).trim();
 	return "Why are you going to " + restOfStatement + "?";
     }
 }
