@@ -41,7 +41,33 @@ public class Methods
     
     public static String findSimpleSentenceStructure(String statement)
     {
-       return "wup";   
+        //initialize local response variable
+        String simpleResponse = "";
+        
+        //search for simple sentence structures and set response accordingly
+        if (findKeyword(statement, "I want to", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformIWantToStatement(statement);
+        }
+        else if (findKeyword(statement, "I want", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformIWantStatement(statement);
+        }
+        int psnYou = findKeyword(statement, "you", 0);
+        int psnI = findKeyword(statement, "I", 0);
+        if (psnYou >= 0
+                && findKeyword(statement, "me", psnYou) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformYouMeStatement(statement);
+        }
+        else if (psnI >= 0
+                && findKeyword(statement, "you", psnI) >= 0)    
+        {
+            simpleResponse = SimpleStructure.transformIYouStatement(statement);
+        }
+        
+        //return forumlated response
+        return simpleResponse;
     }
     
     private static String maybeAddName(String statement)
