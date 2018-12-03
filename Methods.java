@@ -36,11 +36,6 @@ public class Methods
         int spacePsn = findKeyword(statement, " ",10);
     }
     
-    //Aidan's very bad method
-    private static String getNonCommitalResponse(String statement){
-        return "a";
-    }
-    
     public static String findSimpleSentenceStructure(String statement)
     {
        return "wup";   
