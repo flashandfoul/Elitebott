@@ -17,11 +17,28 @@ public class Methods
         if(Conversation.inConversation())
             return maybeAddName(Conversation.getCurrentConversation().getResponse());
         Methods.remember(statement);
-        return maybeAddName(findHighPriority(statement));
+        try {
+            return maybeAddName(findHighPriority(statement));
+        } catch(IOException e) {
+            return ("ERROR: " + e);
+        }
     }
     
-    private static String findHighPriority(String statement)
+    private static String findHighPriority(String statement) throws IOException
     {
+        Scanner reader = new Scanner(new File("high.txt"));
+        String curEntry, response;
+        while(reader.hasNext())
+        {
+            curEntry = reader.next();
+            if(findKeyword(statement, curEntry, 0) > -1)
+            {
+                response = reader.next();
+                response.replaceAll("_", " ");
+                return response;
+            } else
+                reader.next();
+        }
         return "wip";
     }
     
