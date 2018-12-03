@@ -35,8 +35,23 @@ public class Methods
         //Look for "My name is ".
         //namePsn will be zero if the statement starts with "my name is ".
         int namePsn = findKeyword(statement,"My name is ", 0);
-        //Finds the first space after "My name is ".
+        //Finds the position of characters that might come after the name.
         int spacePsn = findKeyword(statement, " ",10);
+        int periodPsn = findKeyword(statement, ".",10);
+        int exclamPsn = findKeyword(statement, "!",10);
+        int commaPsn = findKeyword(statement, ",",10);
+        //Here we find the first of these things to appear.
+        int lowest = statement.length();
+        if (spacePsn > 0)
+        lowest = spacePsn;
+        if (periodPsn > 0 && periodPsn < lowest)
+        lowest = periodPsn;
+        if (exclamPsn > 0 && exclamPsn < lowest)
+        lowest = exclamPsn;
+        if (commaPsn > 0 && commaPsn < lowest)
+        lowest = commaPsn;
+        
+        String name = statement.substring(11,lowest);
     }
     
     public static String findSimpleSentenceStructure(String statement)
