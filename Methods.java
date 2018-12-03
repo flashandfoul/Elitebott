@@ -49,7 +49,7 @@ public class Methods
         return "wip";
     }
     
-    private static int findKeyword(String statement, String goal, int startPos)
+    public static int findKeyword(String statement, String goal, int startPos)
     {
         String phrase = statement.trim().toLowerCase();
         goal = goal.toLowerCase();
