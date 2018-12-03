@@ -6,10 +6,13 @@
  */
 public class Methods
 {
+    //main method that will be called, has several stages
     public static String getResponse(String statement)
     {
-        System.out.println("u da real stupid");
-        return "wump";
+        // CONVERSATION CLASS WIP
+        if(Conversation.inConversation())
+            return Conversation.getCurrentConversation().getResponse();
+        return "wip";
     }
     
     private static String findHighPriority(String statement)
