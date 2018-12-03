@@ -11,7 +11,7 @@ public class SimpleStructure
 {
     //Methods called from findSimpleSentenceStructure()
 
-    public String transformIWantToStatement(String statement)
+    public static String transformIWantToStatement(String statement)
     {
         //  Remove the final period, if there is one
 	statement = statement.trim();
@@ -28,7 +28,7 @@ public class SimpleStructure
 	return "What would it mean to " + restOfStatement + "?";
     }
     
-    public String transformIWantStatement(String statement)
+    public static String transformIWantStatement(String statement)
     {
 	//  Remove the final period, if there is one
 	statement = statement.trim();
@@ -48,7 +48,7 @@ public class SimpleStructure
 	return "Would you really be happy if you had " + restOfStatement + "?";  
     }
     
-    public String transformYouMeStatement(String statement)
+    public static String transformYouMeStatement(String statement)
     {
 	//  Remove the final period, if there is one
 	statement = statement.trim();
@@ -66,12 +66,12 @@ public class SimpleStructure
 	return "What makes you think that I " + restOfStatement + " you?";
     }
     
-    public String transformIYouStatement(String statement)
+    public static String transformIYouStatement(String statement)
     {
 	//  Remove the final period, if there is one
 	statement = statement.trim();
-	String lastChar = statement.substring(statement
-			    .length() - 1);
+	String lastChar = statement.substring(statement.length() - 1);
+	
 	if (lastChar.equals("."))
 	{
 		statement = statement.substring(0, statement.length() - 1);
