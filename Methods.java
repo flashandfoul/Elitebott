@@ -30,10 +30,10 @@ public class Methods
     private static void remember(String statement)
     {
         //Look for "My name is ".
-        //namePsn will be zero if the statement starts with "my name is "
-        //We will only use 
+        //namePsn will be zero if the statement starts with "my name is ".
         int namePsn = findKeyword(statement,"My name is ", 0);
-        
+        //Finds the first space after "My name is ".
+        int spacePsn = findKeyword(statement, " ",10);
     }
     
     //Aidan's very bad method
