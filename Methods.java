@@ -31,9 +31,8 @@ public class Methods
         
     }
     
-    private static String getNonCommitalResponse(String statement)
-    {
-        return "wip";
+    private static String getNonCommitalResponse(String statement){
+        return "a";
     }
     
     private static String maybeAddName(String statement)
