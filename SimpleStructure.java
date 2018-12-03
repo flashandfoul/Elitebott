@@ -13,6 +13,7 @@ public class SimpleStructure
 
     public static String transformIWantToStatement(String statement)
     {
+        //  User format: "I want to <something>."
         //  Remove the final period, if there is one
 	statement = statement.trim();
 	String lastChar = statement.substring(statement.length() - 1);
@@ -30,6 +31,7 @@ public class SimpleStructure
     
     public static String transformIWantStatement(String statement)
     {
+        //  User format: "I want <something>."
 	//  Remove the final period, if there is one
 	statement = statement.trim();
 	String lastChar = statement.substring(statement.length() - 1);
@@ -50,6 +52,7 @@ public class SimpleStructure
     
     public static String transformYouMeStatement(String statement)
     {
+        //  User format: "you <something> me."
 	//  Remove the final period, if there is one
 	statement = statement.trim();
 	String lastChar = statement.substring(statement.length() - 1);
@@ -68,6 +71,7 @@ public class SimpleStructure
     
     public static String transformIYouStatement(String statement)
     {
+        //  User format: "I <something> you."
 	//  Remove the final period, if there is one
 	statement = statement.trim();
 	String lastChar = statement.substring(statement.length() - 1);
