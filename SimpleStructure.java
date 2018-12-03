@@ -65,4 +65,22 @@ public class SimpleStructure
 	String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 	return "What makes you think that I " + restOfStatement + " you?";
     }
+    
+    public String transformIYouStatement(String statement)
+    {
+	//  Remove the final period, if there is one
+	statement = statement.trim();
+	String lastChar = statement.substring(statement
+			    .length() - 1);
+	if (lastChar.equals("."))
+	{
+		statement = statement.substring(0, statement.length() - 1);
+	}
+	    
+	int psnOfI = Methods.findKeyword (statement, "I", 0);
+        int psnOfYou = Methods.findKeyword (statement, "you", psnOfI + 2);
+		
+	String restOfStatement = statement.substring(psnOfI + 2, psnOfYou).trim();
+	return "Why do you " + restOfStatement + " me?";
+    }
 }
