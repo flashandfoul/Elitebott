@@ -52,16 +52,62 @@ public class Methods
         //Look for "My name is ".
         //namePsn will be zero if the statement starts with "my name is ".
         int namePsn = findKeyword(statement,"My name is ", 0);
-        //Finds the first space after "My name is ".
+        
+        //Finds the position of characters that might come after the name.
         int spacePsn = findKeyword(statement, " ",10);
+        int periodPsn = findKeyword(statement, ".",10);
+        int exclamPsn = findKeyword(statement, "!",10);
+        int commaPsn = findKeyword(statement, ",",10);
+        int dashPsn = findKeyword(statement, "-",10);
+        
+        //Here we find the first of these things to appear.
+        int lowest = statement.length();
+        if (spacePsn > 0)
+        lowest = spacePsn;
+        if (periodPsn > 0 && periodPsn < lowest)
+        lowest = periodPsn;
+        if (exclamPsn > 0 && exclamPsn < lowest)
+        lowest = exclamPsn;
+        if (commaPsn > 0 && commaPsn < lowest)
+        lowest = commaPsn;
+        if (dashPsn > 0 && exclamPsn < lowest)
+        lowest = dashPsn;
+        
+        String name = statement.substring(11,lowest);
     }
     
     public static String findSimpleSentenceStructure(String statement)
     {
-       return "wup";   
+        //initialize local response variable
+        String simpleResponse = "";
+        
+        //search for simple sentence structures and set response accordingly
+        if (findKeyword(statement, "I want to", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformIWantToStatement(statement);
+        }
+        else if (findKeyword(statement, "I want", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformIWantStatement(statement);
+        }
+        int psnYou = findKeyword(statement, "you", 0);
+        int psnI = findKeyword(statement, "I", 0);
+        if (psnYou >= 0
+                && findKeyword(statement, "me", psnYou) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformYouMeStatement(statement);
+        }
+        else if (psnI >= 0
+                && findKeyword(statement, "you", psnI) >= 0)    
+        {
+            simpleResponse = SimpleStructure.transformIYouStatement(statement);
+        }
+        
+        //return forumlated response
+        return simpleResponse;
     }
     
-    private static String maybeAddName(String statement)
+    private static String maybeAddName(String response)
     {
         return "wip";
     }
