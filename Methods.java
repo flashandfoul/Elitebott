@@ -64,7 +64,7 @@ public class Methods
        return "wup";   
     }
     
-    private static String maybeAddName(String statement)
+    private static String maybeAddName(String response)
     {
         return "wip";
     }
