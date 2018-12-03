@@ -56,7 +56,7 @@ public class Methods
         if (dashPsn > 0 && exclamPsn < lowest)
         lowest = dashPsn;
         
-        String name = statement.substring(11,lowest);
+        String name = ","+statement.substring(11,lowest);
     }
     
     public static String findSimpleSentenceStructure(String statement)
@@ -96,6 +96,8 @@ public class Methods
     
     private static String maybeAddName(String response)
     {
+        Random randy = new Random();
+        
         return "wip";
     }
     
