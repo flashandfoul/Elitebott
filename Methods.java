@@ -28,7 +28,7 @@ public class Methods
     
     private static void remember(String statement)
     {
-        if {
+        if (){
         
         }
     }
