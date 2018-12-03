@@ -35,6 +35,11 @@ public class Methods
         return "a";
     }
     
+    public static String findSimpleSentenceStructure(String statement)
+    {
+       return "wup";   
+    }
+    
     private static String maybeAddName(String statement)
     {
         return "wip";
