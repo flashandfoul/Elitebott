@@ -61,8 +61,10 @@ public class Methods
     
     public static String findSimpleSentenceStructure(String statement)
     {
-        //initialize local response variable
+        //initialize local variables
         String simpleResponse = "";
+        int psnYou = findKeyword(statement, "you", 0);
+        int psnI = findKeyword(statement, "I", 0);
         
         //search for simple sentence structures and set response accordingly
         if (findKeyword(statement, "I want to", 0) >= 0)
@@ -73,22 +75,21 @@ public class Methods
         {
             simpleResponse = SimpleStructure.transformIWantStatement(statement);
         }
-        
-        int psnYou = findKeyword(statement, "you", 0);
-        int psnI = findKeyword(statement, "I", 0);
-        if (psnYou >= 0
-                && findKeyword(statement, "me", psnYou) >= 0)
+        else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
         {
             simpleResponse = SimpleStructure.transformYouMeStatement(statement);
         }
-        else if (psnI >= 0
-                && findKeyword(statement, "you", psnI) >= 0)    
+        else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
         {
             simpleResponse = SimpleStructure.transformIYouStatement(statement);
         }
         else if (findKeyword(statement, "I will", 0) >= 0)
         {
             simpleResponse = SimpleStructure.transformIWillStatement(statement);
+        }
+        else if (findKeyword(statement, "I like", 0) >= 0)
+        {
+            simpleResponse = SimpleStructure.transformILikeStatement(statement);
         }
         //return forumlated response
         return simpleResponse;
