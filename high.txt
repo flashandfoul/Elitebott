@@ -1,14 +1,1 @@
-I_dunno_what_you've_been_told,_elitebott_is_better_than_gold!
-One,_two,_use_hot_glue._Three,_four,_blood_and_gore._Five,_six,_lots_of_licks.
-Ok,_I_guess.
-How_about_no?
-We_three_kings_do_approve_of_this_statement.
-Huh?_Sorry,_I_had_earwax_in_my_ear.
-qwertyuiop.
-I...don't_know_how_to_respond_to_that.
-Rub_a_dub_dub,_fish_goes_blub_blub...
-Woah_There!_Slow_down_buddy!
-
-
-
-
+cars	START_CONVERSATION_CARS
