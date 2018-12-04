@@ -1,1 +1,2 @@
 cars	START_CONVERSATION_CARS
+legos	I_used_to_always_play_with_legos_as_a_young_computer,_of_course_mine_were_on_roblox_and_simulated!
