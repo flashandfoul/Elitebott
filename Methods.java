@@ -25,7 +25,7 @@ public class Methods
         } catch(IOException e) {
             return ("ERROR: " + e);
         } catch(Exception e) {
-            system.out.println("ERROR: " + e);
+            System.out.println("ERROR: " + e);
         }
     }
     
@@ -60,6 +60,11 @@ public class Methods
         return findSimpleSentenceStructure(statement);
     }
     
+    private static String getOpener()
+    {
+        return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
+    }
+    
     private static String findLowPriority(String statement)
     {
         // init local variables
@@ -83,7 +88,7 @@ public class Methods
                 reader.next();
             }
         }
-        return gottacommit.getNonCommittalResponse(statement);   
+        return gottacommit.getNonCommitalResponse(statement);   
     }
     
     private static void remember(String statement)
