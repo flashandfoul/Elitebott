@@ -5,7 +5,7 @@
  * order to form simple sentence structures.
  * 
  * @aj
- * @version (a version number or a date)
+ * @version best
  */
 public class SimpleStructure
 {
