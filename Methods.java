@@ -10,7 +10,7 @@ import java.io.*;
  */
 public class Methods
 {
-    static String name;
+    static String name = "";
     //main method that will be called, has several stages
     public static String getResponse(String statement)
     {
@@ -97,32 +97,33 @@ public class Methods
         //Look for "My name is ".
         //namePsn will be zero if the statement includes with "my name is ".
         int namePsn = findKeyword(statement,"My name is ", 0);
+        if (namePsn > 0){
+            //Finds the position of characters that might come after the name.
+            int spacePsn = findKeyword(statement, " ",10);
+            int periodPsn = findKeyword(statement, ".",10);
+            int exclamPsn = findKeyword(statement, "!",10);
+            int commaPsn = findKeyword(statement, ",",10);
+            int dashPsn = findKeyword(statement, "-",10);
+            int questPsn = findKeyword(statement, "?",10);
         
-        //Finds the position of characters that might come after the name.
-        int spacePsn = findKeyword(statement, " ",10);
-        int periodPsn = findKeyword(statement, ".",10);
-        int exclamPsn = findKeyword(statement, "!",10);
-        int commaPsn = findKeyword(statement, ",",10);
-        int dashPsn = findKeyword(statement, "-",10);
-        int questPsn = findKeyword(statement, "?",10);
-        
-        //Here we find the first of these things to appear.
-        int lowest = statement.length();
-        if (spacePsn > 0)
-        lowest = spacePsn;
-        if (periodPsn > 0 && periodPsn < lowest)
-        lowest = periodPsn;
-        if (exclamPsn > 0 && exclamPsn < lowest)
-        lowest = exclamPsn;
-        if (commaPsn > 0 && commaPsn < lowest)
-        lowest = commaPsn;
-        if (dashPsn > 0 && exclamPsn < lowest)
-        lowest = dashPsn;
-        if (questPsn > 0 && questPsn < lowest)
-        lowest = questPsn;
-        
-        //name is a comma and a space and a name.
-        name = ", "+statement.substring(11,lowest);
+            //Here we find the first of these things to appear.
+            int lowest = statement.length();
+            if (spacePsn > 0)
+            lowest = spacePsn;
+            if (periodPsn > 0 && periodPsn < lowest)
+            lowest = periodPsn;
+            if (exclamPsn > 0 && exclamPsn < lowest)
+            lowest = exclamPsn;
+            if (commaPsn > 0 && commaPsn < lowest)
+            lowest = commaPsn;
+            if (dashPsn > 0 && exclamPsn < lowest)
+            lowest = dashPsn;
+            if (questPsn > 0 && questPsn < lowest)
+            lowest = questPsn;
+            
+            //name is a comma and a space and a name.
+            name = ", "+statement.substring(11,lowest);
+        }
     }
     
     public static String findSimpleSentenceStructure(String statement)
@@ -179,8 +180,10 @@ public class Methods
                 return response+name+"?";
             else if (endsExclam)
                 return response+name+"!";
+            else
+                return response+name;
         }else
-        return response+name;
+        return response;
     }
     
     public static int findKeyword(String statement, String goal, int startPos)
