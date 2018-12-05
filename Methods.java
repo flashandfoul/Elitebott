@@ -121,8 +121,8 @@ public class Methods
         if (questPsn > 0 && questPsn < lowest)
         lowest = questPsn;
         
-        //name is a comma and a name.
-        name = ","+statement.substring(11,lowest);
+        //name is a comma and a space and a name.
+        name = ", "+statement.substring(11,lowest);
     }
     
     public static String findSimpleSentenceStructure(String statement)
@@ -180,7 +180,7 @@ public class Methods
             else if (endsExclam)
                 return response+name+"!";
         }else
-        return response;
+        return response+name;
     }
     
     public static int findKeyword(String statement, String goal, int startPos)
