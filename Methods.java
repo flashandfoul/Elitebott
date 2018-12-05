@@ -30,6 +30,11 @@ public class Methods
         }
     }
     
+    public static String findDefinedWord(String statement)
+    {
+        return "wip";
+    }
+    
     private static String findHighPriority(String statement) throws IOException
     {
         // init local variables
