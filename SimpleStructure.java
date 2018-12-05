@@ -1,4 +1,4 @@
-
+import java.util.Random;
 /**
  * Class SimpleStructure is a compilation of methods that
  * the Methods.findSimpleSentenceStructure() calls for in
