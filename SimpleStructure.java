@@ -104,6 +104,7 @@ public class SimpleStructure
         int psn = Methods.findKeyword (statement, "I will", 0);
         String restOfStatement = statement.substring(psn + 7).trim();
         
+        // Randomize Responses
         Random generator = new Random();
         returnint rndm = generator.nextInt(4);
         if (rndm == 0)
