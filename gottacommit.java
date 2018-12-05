@@ -9,6 +9,8 @@ public class gottacommit
     private String response=""; private int x=0;
     ArrayList neutralresponse=new ArrayList(20);
     Scanner filereader=new Scanner(new File("randomresponses.txt"));
+    int arrayterms=
+    for(int r=0;r<
     Random dumbo=new Random();
     public static String getNonCommitalResponse(String statement){
         if(true){
