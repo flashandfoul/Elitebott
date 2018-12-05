@@ -16,7 +16,7 @@ public class main
         Scanner reader = new Scanner(System.in);
         
         //  prints out a default greeting used by the EliteBot.
-        system.out.println(Methods.getOpener());
+        System.out.println(Methods.getOpener());
         
         //  gets the client's response
         response = reader.nextLine();
