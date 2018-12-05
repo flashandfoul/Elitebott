@@ -15,9 +15,11 @@ public class gottacommit{
             initted=hasinitted;
             Scanner filereader=new Scanner(new File("randomresponses.txt"));
             int arrayterms;
-            while(filereader.hasNext()){arrayterms++;}
+            while(filereader.hasNext()){
+            arrayterms++;
             ArrayList neutralresponse=new ArrayList(arrayterms);
             neutralresponse(r+1)=
+        }
             hasinitted=true;
     }
     }
@@ -26,10 +28,10 @@ public class gottacommit{
     public static String getNonCommitalResponse(String statement){
         initializearray
         if(true){
-        return response;
+        response=
     }
     else if(){}
-    else(return neutralresponse.get(dumbo.nextInt(20)+1);
+    else(return neutralresponse.get(dumbo.nextInt(arrayterms)+1);
     }
     public void complicated{x++;}
     public void definition{x++;}
