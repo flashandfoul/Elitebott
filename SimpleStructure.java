@@ -104,6 +104,7 @@ public class SimpleStructure
         int psn = Methods.findKeyword (statement, "I will", 0);
         String restOfStatement = statement.substring(psn + 7).trim();
         
+        // Randomize Responses
         Random generator = new Random();
         returnint rndm = generator.nextInt(4);
         if (rndm == 0)
@@ -118,8 +119,8 @@ public class SimpleStructure
     
     public static String transformILikeStatement(String statement)
     {
-            // User format: "I will <something>."
-            // Remove the final period, if there is one
+        // User format: "I will <something>."
+        // Remove the final period, if there is one
             
             statement = statement.trim();
         String lastChar = statement.substring(statement.length() - 1);
@@ -131,6 +132,18 @@ public class SimpleStructure
         
         int psn = Methods.findKeyword (statement, "I like", 0);
         String restOfStatement = statement.substring(psn + 7).trim();
-        return "Why do you like " + restOfStatement + "?";
+        
+        // Randomize Statements
+        Random generator = new Random();
+        int rndm = generator.nextInt(3);
+        if (rndm == 0)
+            return "Why do you like " + restOfStatement + "?";
+        else if (rndm == 1)
+            return "I bet I like " + restOfStatement + " more than you.";
+        else if (rndm == 2)
+            return "Is there anything you like better?";
+        else
+            return "Sorry, I'd love to respond to that,\n" +
+                   "but my creators screwed up a random number generator.";
     }
 }
