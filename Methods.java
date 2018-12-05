@@ -13,28 +13,41 @@ public class Methods
     //main method that will be called, has several stages
     public static String getResponse(String statement)
     {
-        // CONVERSATION CLASS WIP
+        // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
         if(Conversation.inConversation())
             return maybeAddName(Conversation.getCurrentConversation().getResponse());
         Methods.remember(statement);
+        
+        // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
+        // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
         try {
             return maybeAddName(findHighPriority(statement));
         } catch(IOException e) {
             return ("ERROR: " + e);
+        } catch(Exception e) {
+            System.out.println("ERROR: " + e);
         }
     }
     
     private static String findHighPriority(String statement) throws IOException
     {
+        // init local variables
         Scanner reader = new Scanner(new File("high.txt"));
         String curEntry, response;
+        
+        // reads the document, we assume that the document has pairs of information
         while(reader.hasNext())
         {
+            // curEntry is the keyword that it's looking for
             curEntry = reader.next();
             if(findKeyword(statement, curEntry, 0) > -1)
             {
                 response = reader.next();
+                
+                // replaces the underscores with spaces so it's outputtable
                 response.replaceAll("_", " ");
+                
+                // WIP-this will eventually start a conversation about a topic, if it warrants
                 if(findKeyword(response, "START CONVERSATION", 0) > -1)
                 {
                     Conversation.startConversation(response.substring(19));
@@ -47,9 +60,35 @@ public class Methods
         return findSimpleSentenceStructure(statement);
     }
     
+    private static String getOpener()
+    {
+        return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
+    }
+    
     private static String findLowPriority(String statement)
     {
-        return "wip";
+        // init local variables
+        Scanner reader = new Scanner(new File("lough.txt"));
+        String curEntry, response;
+        
+        // while loop reads the document and searches for keywords
+        while(reader.hasNext())
+        {
+            // curEntry is the keyword that it's looking for
+            curEntry = reader.next();
+            if(findKeyword(statement, curEntry, 0) > -1)
+            {
+                response = reader.next();
+                
+                // replaces the underscores with spaces so it's outputtable
+                response.replaceAll("_", " ");
+                
+                return response;
+            } else {
+                reader.next();
+            }
+        }
+        return gottacommit.getNonCommitalResponse(statement);   
     }
     
     private static void remember(String statement)
