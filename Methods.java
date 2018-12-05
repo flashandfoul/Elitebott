@@ -55,7 +55,7 @@ public class Methods
     private static void remember(String statement)
     {
         //Look for "My name is ".
-        //namePsn will be zero if the statement starts with "my name is ".
+        //namePsn will be zero if the statement includes with "my name is ".
         int namePsn = findKeyword(statement,"My name is ", 0);
         
         //Finds the position of characters that might come after the name.
@@ -81,7 +81,7 @@ public class Methods
         if (questPsn > 0 && questPsn < lowest)
         lowest = questPsn;
         
-        //Name is a comma and a name.
+        //name is a comma and a name.
         String name = ","+statement.substring(11,lowest);
     }
     
@@ -126,8 +126,8 @@ public class Methods
         Random randy = new Random();
         // 1/7 of the time, Elitebott will add the user's name to the end of the response.
         if (randy.nextInt(7) == 6){
-        
-        } else
+            //Checks to see if the statement ends in a punctuation mark.
+        }else
         return response;
     }
     
