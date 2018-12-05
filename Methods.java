@@ -10,7 +10,9 @@ import java.io.*;
  */
 public class Methods
 {
-    static String name;
+    //  init Statics
+    static String name;  
+    
     //main method that will be called, has several stages
     public static String getResponse(String statement)
     {
@@ -89,7 +91,7 @@ public class Methods
                 reader.next();
             }
         }
-        return gottacommit.getNonCommitalResponse();   
+        return gottacommit.getNonCommitalResponse(statement);   
     }
     
     private static void remember(String statement)
