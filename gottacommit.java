@@ -1,6 +1,7 @@
 
 /**
- * hullo
+ * last choice response
+ * may also add timer to detect robot
  */
 import java.util.*;
 import java.io.*;
