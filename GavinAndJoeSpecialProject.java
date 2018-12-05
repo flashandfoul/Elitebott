@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Gavin_and_Joe_Special_Project here.
  *
@@ -7,5 +6,10 @@
  */
 public class GavinAndJoeSpecialProject
 {
-   //hi
+    static String longWord;
+    //Finds longest word.
+    public static String findLongestWord(String statement){
+        return "wip";
+    }
+    
 }
