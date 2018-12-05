@@ -10,6 +10,7 @@ import java.io.*;
  */
 public class Methods
 {
+    static String name;
     //main method that will be called, has several stages
     public static String getResponse(String statement)
     {
@@ -121,7 +122,7 @@ public class Methods
         lowest = questPsn;
         
         //name is a comma and a name.
-        String name = ","+statement.substring(11,lowest);
+        name = ","+statement.substring(11,lowest);
     }
     
     public static String findSimpleSentenceStructure(String statement)
