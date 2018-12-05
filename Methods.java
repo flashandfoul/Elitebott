@@ -166,6 +166,18 @@ public class Methods
         // 1/7 of the time, Elitebott will add the user's name to the end of the response.
         if (randy.nextInt(7) == 6){
             //Checks to see if the statement ends in a punctuation mark.
+            String endChar = response.substring(response.length()-1,response.length());
+            Boolean endsPeriod = (endChar.equals("."));
+            Boolean endsQuest = (endChar.equals("?"));
+            Boolean endsExclam = (endChar.equals("!"));
+            if (endsPeriod || endsQuest || endsExclam)
+                response = response.substring(0,response.length()-1);
+            if (endsPeriod)
+                return response+name+".";
+            else if (endsQuest)
+                return response+name+"?";
+            else if (endsExclam)
+                return response+name+"!";
         }else
         return response;
     }
