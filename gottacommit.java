@@ -9,26 +9,31 @@ public class gottacommit{
     private String response=""; private int x=0;
     public static boolean hasinitted=false;
     Random dumbo=new Random();
+    
     //initialize array for use in random responses
-    public void initializearray(boolean initted){
+    public static void initializearray(){
         if(!hasinitted){
-            initted=hasinitted;
             Scanner filereader=new Scanner(new File("randomresponses.txt"));
             int arrayterms;
+            ArrayList neutralresponse=new ArrayList();
+            int c=0;
             while(filereader.hasNext()){
-            arrayterms++;
-            ArrayList neutralresponse=new ArrayList(arrayterms);
-            neutralresponse(r+1)=
+            neutralresponse(c)=filereader.nextLine();
+            neutralresponse(x)=filereader.;
+            neutralresponse(r+1)=0;
+            c++;
         }
-            hasinitted=true;
+        hasinitted=true;
+        }
+            
     }
-    }
+    
     
     
     public static String getNonCommitalResponse(String statement){
-        initializearray
+        initializearray();
         if(true){
-        response=
+        
     }
     else if(){}
     else(return neutralresponse.get(dumbo.nextInt(arrayterms)+1);
