@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Gavin_and_Joe_Special_Project here.
  *
