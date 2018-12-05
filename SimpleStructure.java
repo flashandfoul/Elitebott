@@ -106,14 +106,14 @@ public class SimpleStructure
     
     Random generator = new Random();
     returnint rndm = generator.nextInt(4);
-    if (rndm = 0)
+    if (rndm == 0)
         return "How are you going to " + restOfStatement + "?";
-    else if (rndm = 1)
+    else if (rndm == 1)
         return "Why are you going to " + restOfStatement + "?";
-    else if (rndm = 2)
+    else if (rndm == 2)
         return "When are you going to " + restOfStatement + "?";
     else
-        return "With whom are you going to " + restOfStatement + "";
+        return "Who are you going to" + restOfStatement + "with?";
     }
     
     public static String transformILikeStatement(String statement)
