@@ -88,7 +88,7 @@ public class Methods
                 reader.next();
             }
         }
-        return gottacommit.getNonCommitalResponse(statement);   
+        return gottacommit.getNonCommitalResponse();   
     }
     
     private static void remember(String statement)
