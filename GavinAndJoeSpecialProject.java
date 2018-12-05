@@ -7,6 +7,7 @@
  */
 public class GavinAndJoeSpecialProject
 {
+    static String longWord;
     //Finds longest word.
     public static String findLongestWord(String statement){
         return "wip";
