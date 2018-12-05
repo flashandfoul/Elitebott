@@ -142,8 +142,7 @@ public class SimpleStructure
         else if (rndm == 2)
             return "Is there anything you like better?";
         else
-            return "Sorry, I'd love to respond,\nbut my creators screwed up a random number generator.";
-        
-        return "Why do you like " + restOfStatement + "?";
+            return "Sorry, I'd love to respond to that,\n" +
+                   "but my creators screwed up a random number generator.";
     }
 }
