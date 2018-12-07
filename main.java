@@ -1,7 +1,7 @@
 // this is the main class
 // pretty much our only class
-import java.util.Scanner;
-
+//in computer class
+import java.util.*;
 
 public class main
 {
