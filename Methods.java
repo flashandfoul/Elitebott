@@ -157,13 +157,13 @@ public class Methods
         {
             return SimpleStructure.transformYouMeStatement(statement);
         }
-        else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
-        {
-            return SimpleStructure.transformIYouStatement(statement);
-        }
         else if (findKeyword(statement, "I will", 0) >= 0)
         {
             return SimpleStructure.transformIWillStatement(statement);
+        }
+        else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
+        {
+            return SimpleStructure.transformIYouStatement(statement);
         }
         else if (findKeyword(statement, "I like", 0) >= 0)
         {
