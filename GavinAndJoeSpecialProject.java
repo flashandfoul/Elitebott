@@ -9,6 +9,15 @@ public class GavinAndJoeSpecialProject
     static String longWord;
     //Finds longest word.
     public static String findLongestWord(String statement){
+        int spacePsn = statement.indexOf(" ");
+        int lastPsn = 0;
+        longWord = "";
+        while (spacePsn != -1){
+            lastPsn = spacePsn;
+            
+            spacePsn = statement.indexOf(" ");
+            
+        }
         return "wip";
     }
     
