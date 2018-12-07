@@ -28,15 +28,16 @@ public class Methods
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
-        while(true){
+
         try {
-            return maybeAddName(findHighPriority(statement));
+            
+            return maybeAddName(findHighPriority(statement)).replaceAll("_"," ");
         } catch(IOException e) {
             return ("ERROR: " + e);
         } catch(Exception e) {
-            System.out.println("ERROR: " + e);
+            return ("ERROR: " + e);
         }
-    }
+
     }
     
     public static String findDefinedWord(String statement)
@@ -137,40 +138,39 @@ public class Methods
         }
     }
     
-    public static String findSimpleSentenceStructure(String statement)
+    public static String findSimpleSentenceStructure(String statement) throws IOException
     {
         //initialize local variables
-        String simpleResponse = "";
         int psnYou = findKeyword(statement, "you", 0);
         int psnI = findKeyword(statement, "I", 0);
         
         //search for simple sentence structures and set response accordingly
         if (findKeyword(statement, "I want to", 0) >= 0)
         {
-            simpleResponse = SimpleStructure.transformIWantToStatement(statement);
+            return SimpleStructure.transformIWantToStatement(statement);
         }
         else if (findKeyword(statement, "I want", 0) >= 0)
         {
-            simpleResponse = SimpleStructure.transformIWantStatement(statement);
+            return SimpleStructure.transformIWantStatement(statement);
         }
         else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
         {
-            simpleResponse = SimpleStructure.transformYouMeStatement(statement);
+            return SimpleStructure.transformYouMeStatement(statement);
         }
         else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
         {
-            simpleResponse = SimpleStructure.transformIYouStatement(statement);
+            return SimpleStructure.transformIYouStatement(statement);
         }
         else if (findKeyword(statement, "I will", 0) >= 0)
         {
-            simpleResponse = SimpleStructure.transformIWillStatement(statement);
+            return SimpleStructure.transformIWillStatement(statement);
         }
         else if (findKeyword(statement, "I like", 0) >= 0)
         {
-            simpleResponse = SimpleStructure.transformILikeStatement(statement);
+            return SimpleStructure.transformILikeStatement(statement);
         }
         //return forumlated response
-        return simpleResponse;
+        return findLowPriority(statement);
     }
     
     private static String maybeAddName(String response)
