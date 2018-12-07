@@ -18,6 +18,7 @@ public class gottacommit{
         Scanner filereader=new Scanner(new File("randomresponses.txt"));
             while(filereader.hasNext()){
             neutralresponse.add(filereader.nextLine());
+            arrayterms++;
         }
         hasinitted=true;
         }
