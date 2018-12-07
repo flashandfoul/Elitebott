@@ -13,6 +13,12 @@ public class Methods
     //  init Statics
     static String name = "";
     //main method that will be called, has several stages
+    
+     public static String getOpener()
+    {
+        return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
+    }
+    
     public static String getResponse(String statement)
     {
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
@@ -22,6 +28,7 @@ public class Methods
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
+        while(true){
         try {
             return maybeAddName(findHighPriority(statement));
         } catch(IOException e) {
@@ -29,6 +36,7 @@ public class Methods
         } catch(Exception e) {
             System.out.println("ERROR: " + e);
         }
+    }
     }
     
     public static String findDefinedWord(String statement)
@@ -67,10 +75,7 @@ public class Methods
         return findSimpleSentenceStructure(statement);
     }
     
-    public static String getOpener()
-    {
-        return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
-    }
+   
     
     private static String findLowPriority(String statement)throws IOException
     {
