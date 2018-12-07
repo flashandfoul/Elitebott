@@ -13,7 +13,7 @@ public class GavinAndJoeSpecialProject
     public static String findLongestWord(String statement){
         return "wip";
     }
-    
+    //Sends longest word to a text document for storage
     public static void sendToDocument(String longWord) throws IOException{
         PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
         writer.println(longWord);
