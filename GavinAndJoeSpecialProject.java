@@ -78,11 +78,12 @@ public class GavinAndJoeSpecialProject
     public static void sendToDocument(String longWord) throws IOException{
         Scanner reader = new Scanner(new File("DefinedWords.txt"));
         PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
-        
+        String document = "";
         while (reader.hasNext()){
-            String word = reader.nextLine();
-            writer.println(word);
+            document = reader.nextLine();
+            writer.println(document);
         }
+
         writer.println(longWord);
         writer.close();
     }
