@@ -1,15 +1,17 @@
 /**
- * Write a description of class Gavin_and_Joe_Special_Project here.
+ * This deals with the chatbot's ability to learn and recite new words.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * -Joe and Gavin
+ * 
  */
 
 import java.io.*;
+
 public class GavinAndJoeSpecialProject
 {
     static String longWord;
-    //Finds longest word.
+    
+    //Finds longest word in the user's statement
     public static String findLongestWord(String statement){
         int lastSpace = 0;
         int spacePsn = statement.indexOf(" ");
@@ -24,6 +26,7 @@ public class GavinAndJoeSpecialProject
         }
         return longWord;
     }
+    
     //Sends longest word to a text document for storage
     public static void sendToDocument(String longWord) throws IOException{
         PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
