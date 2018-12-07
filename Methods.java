@@ -10,13 +10,8 @@ import java.io.*;
  */
 public class Methods
 {
-<<<<<<< HEAD
     //  init Statics
-    static String name;  
-    
-=======
     static String name = "";
->>>>>>> ece0e0ce67d4da3b2c2aca3d4c6357a4d5b78caf
     //main method that will be called, has several stages
     public static String getResponse(String statement)
     {
