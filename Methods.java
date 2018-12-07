@@ -22,6 +22,7 @@ public class Methods
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
+        while(true){
         try {
             return maybeAddName(findHighPriority(statement));
         } catch(IOException e) {
@@ -29,6 +30,7 @@ public class Methods
         } catch(Exception e) {
             System.out.println("ERROR: " + e);
         }
+    }
     }
     
     public static String findDefinedWord(String statement)
