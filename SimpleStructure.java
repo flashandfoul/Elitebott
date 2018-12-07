@@ -114,7 +114,7 @@ public class SimpleStructure
         else if (rndm == 2)
             return "When are you going to " + restOfStatement + "?";
         else
-            return "Who are you going to" + restOfStatement + "with?";
+            return "Who are you going to " + restOfStatement + " with?";
     }
     
     public static String transformILikeStatement(String statement)
