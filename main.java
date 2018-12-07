@@ -24,7 +24,7 @@ public class main
         
         //  while loop keeps processing until the user enters the pre-
         //  set sentinal value
-        while(!closers.contains(response))
+        while(!closers.contains((response.replaceAll("_"," ")).toLowerCase()))
         {
             System.out.println(Methods.getResponse(response));
             response = reader.nextLine();

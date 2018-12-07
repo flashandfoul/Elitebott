@@ -11,4 +11,5 @@ jaa_ne
 mata_ne
 sayonara
 i_don't_like_you
+au_revoir
 
