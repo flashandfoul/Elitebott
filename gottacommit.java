@@ -1,43 +1,30 @@
 
 /**
  * last choice response
- * may also add timer to detect robot
+ * Aidan's terribly disfigured class
  */
 import java.util.*;
 import java.io.*;
 public class gottacommit{
     private String response=""; private int x=0;
     public static boolean hasinitted=false;
-    Random dumbo=new Random();
-    
+    static Random dumbo=new Random();
+    static ArrayList neutralresponse=new ArrayList();
+    private static int arrayterms;
+    static Scanner filereader=new Scanner(new File("randomresponses.txt"));
     //initialize array for use in random responses
     public static void initializearray(){
         if(!hasinitted){
-            Scanner filereader=new Scanner(new File("randomresponses.txt"));
-            int arrayterms;
-            ArrayList neutralresponse=new ArrayList();
-            int c=0;
             while(filereader.hasNext()){
-            neutralresponse(c)=filereader.nextLine();
-            neutralresponse(x)=filereader.;
-            neutralresponse(r+1)=0;
-            c++;
+            neutralresponse.add(filereader.nextLine());
         }
         hasinitted=true;
         }
-            
     }
-    
-    
     
     public static String getNonCommitalResponse(String statement){
         initializearray();
-        if(true){
-        
+        String tehresponse=neutralresponse.get(dumbo.nextInt(arrayterms));
+        return tehresponse;
     }
-    else if(){}
-    else(return neutralresponse.get(dumbo.nextInt(arrayterms)+1);
-    }
-    public void complicated{x++;}
-    public void definition{x++;}
 }
