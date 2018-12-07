@@ -4,6 +4,8 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+
+import java.io.*;
 public class GavinAndJoeSpecialProject
 {
     static String longWord;
@@ -21,4 +23,9 @@ public class GavinAndJoeSpecialProject
         return "wip";
     }
     
+    public static void sendToDocument(String longWord) throws IOException{
+        PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
+        writer.println(longWord);
+        writer.close();
+    }
 }
