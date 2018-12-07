@@ -19,7 +19,7 @@ public class GavinAndJoeSpecialProject
         int longLength = longWord.length();
         while (spacePsn != -1){
             lastSpace = spacePsn;
-            spacePsn = statement.indexOf(" ", spacePsn);
+            spacePsn = statement.indexOf(" ", spacePsn+1);
             if (spacePsn - lastSpace > longLength)
                 longWord = statement.substring(lastSpace, spacePsn);
                 longLength = longWord.length();
