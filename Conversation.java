@@ -2,9 +2,15 @@
 
 public class Conversation
 {
-    public Conversation(){} //wip
+    static boolean inConvo;
     public static boolean inConversation() { return false; } // wip
-    public static Conversation getCurrentConversation() { return null; } // wip
     public static String getResponse() { return "wip"; } // wip
-    public static void startConversation(String s) { } // wip
+    public static void startConversation(String s) {
+        inConvo = true;
+        
+    }
+    public static void endConversation() {
+        inConvo = false;
+        
+    }
 }
