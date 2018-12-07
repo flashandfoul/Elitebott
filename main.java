@@ -26,7 +26,7 @@ public class main
         while(!(response.equals(sentinal)))
         {
             System.out.println(Methods.getResponse(response));
-            response = reader.nextLine;
+            response = reader.nextLine();
         }
     }
 }
