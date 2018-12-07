@@ -77,18 +77,31 @@ public class GavinAndJoeSpecialProject
 
         return longWord;
     }
-    
+    public static void appendStrToFile(String fileName, 
+                                       String str) 
+    { 
+        try { 
+  
+            // Open given file in append mode. 
+            BufferedWriter writer = new BufferedWriter( 
+                   new FileWriter("DefinedWords.txt", true)); 
+            writer.write(str); 
+            writer.close(); 
+        } 
+        catch (IOException e) { 
+            System.out.println("exception occoured" + e); 
+        } 
+    } 
     //Sends longest word to a text document for storage
     public static void sendToDocument(String longWord) throws IOException{
         Scanner reader = new Scanner(new File("DefinedWords.txt"));
-        PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
-        String document = "";
-        while (reader.hasNext()){
-            document = reader.nextLine();
-            writer.println(document);
-        }
-
-        writer.println(longWord);
+        BufferedWriter writer = new BufferedWriter(new FileWriter("DefinedWords.txt"));
+        String document = longWord;
+        writer.write(document);
         writer.close();
+
+        appendStrToFile("DefinedWords.txt", longWord); 
+        
+
     }
 }
