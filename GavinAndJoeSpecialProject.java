@@ -6,6 +6,7 @@
  */
 
 import java.io.*;
+import java.util.Scanner;
 
 public class GavinAndJoeSpecialProject
 {
@@ -29,7 +30,13 @@ public class GavinAndJoeSpecialProject
     
     //Sends longest word to a text document for storage
     public static void sendToDocument(String longWord) throws IOException{
+        Scanner reader = new Scanner(new File("DefinedWords.txt"));
         PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
+        
+        while (reader.hasNext()){
+            String word = reader.nextLine();
+            writer.println(word);
+        }
         writer.println(longWord);
         writer.close();
     }
