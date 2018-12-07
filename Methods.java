@@ -31,7 +31,7 @@ public class Methods
 
         try {
             
-            return maybeAddName(findHighPriority(statement)).replaceAll("_"," ");
+            return maybeAddName(findHighPriority(statement).replaceAll("_"," "));
         } catch(IOException e) {
             return ("ERROR: " + e);
         } catch(Exception e) {
@@ -177,7 +177,7 @@ public class Methods
     {
         Random randy = new Random();
         // 1/7 of the time, Elitebott will add the user's name to the end of the response.
-        if (randy.nextInt(7) == 6){
+        if (randy.nextInt(7) < 10000){
             //Checks to see if the statement ends in a punctuation mark.
             String endChar = response.substring(response.length()-1);
             Boolean endsPeriod = (endChar.equals("."));
