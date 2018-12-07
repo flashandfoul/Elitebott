@@ -9,12 +9,13 @@ public class gottacommit{
     private String response=""; private int x=0;
     public static boolean hasinitted=false;
     static Random dumbo=new Random();
-    static ArrayList neutralresponse=new ArrayList();
+    static ArrayList<String> neutralresponse=new ArrayList();
     private static int arrayterms;
-    static Scanner filereader=new Scanner(new File("randomresponses.txt"));
+    
     //initialize array for use in random responses
-    public static void initializearray(){
+    public static void initializearray()throws IOException{
         if(!hasinitted){
+        Scanner filereader=new Scanner(new File("randomresponses.txt"));
             while(filereader.hasNext()){
             neutralresponse.add(filereader.nextLine());
         }
@@ -22,9 +23,10 @@ public class gottacommit{
         }
     }
     
-    public static String getNonCommitalResponse(String statement){
+    public static String getNonCommitalResponse(String statement)throws IOException{
         initializearray();
-        String tehresponse=neutralresponse.get(dumbo.nextInt(arrayterms));
+        int responsenumber=dumbo.nextInt(arrayterms);
+        String tehresponse=neutralresponse.get(responsenumber);
         return tehresponse;
     }
 }

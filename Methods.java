@@ -67,12 +67,12 @@ public class Methods
         return findSimpleSentenceStructure(statement);
     }
     
-    private static String getOpener()
+    public static String getOpener()
     {
         return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
     }
     
-    private static String findLowPriority(String statement)
+    private static String findLowPriority(String statement)throws IOException
     {
         // init local variables
         Scanner reader = new Scanner(new File("lough.txt"));

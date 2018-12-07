@@ -106,7 +106,7 @@ public class SimpleStructure
         
         // Randomize Responses
         Random generator = new Random();
-        returnint rndm = generator.nextInt(4);
+        int rndm = generator.nextInt(4);
         if (rndm == 0)
             return "How are you going to " + restOfStatement + "?";
         else if (rndm == 1)
