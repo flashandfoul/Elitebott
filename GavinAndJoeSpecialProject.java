@@ -11,7 +11,7 @@ public class GavinAndJoeSpecialProject
 {
     static String longWord;
     
-    //Finds longest word in the user's statement
+    //Finds longest word in the user's statement.
     public static String findLongestWord(String statement){
         //Finds longest word.
         int lastSpace = 0;
@@ -69,7 +69,11 @@ public class GavinAndJoeSpecialProject
             longWord = longWord.substring(1);
         if (longWord.indexOf("\"") > 0)
             longWord = longWord.substring(0,longWord.indexOf("\""));
-        
+        if (longWord.indexOf("-") == 0)
+            longWord = longWord.substring(1);
+        if (longWord.indexOf("-") > 0)
+            longWord = longWord.substring(0,longWord.indexOf("-"));
+
         return longWord;
     }
     
