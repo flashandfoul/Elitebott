@@ -24,7 +24,7 @@ public class GavinAndJoeSpecialProject
         }
         return longWord;
     }
-    
+    //Sends longest word to a text document for storage
     public static void sendToDocument(String longWord) throws IOException{
         PrintWriter writer = new PrintWriter(new File("DefinedWords.txt"));
         writer.println(longWord);
