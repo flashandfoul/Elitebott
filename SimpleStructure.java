@@ -69,25 +69,6 @@ public class SimpleStructure
         return "What makes you think that I " + restOfStatement + " you?";
     }
     
-    public static String transformIYouStatement(String statement)
-    {
-            //  User format: "I <something> you."
-        //  Remove the final period, if there is one
-        statement = statement.trim();
-        String lastChar = statement.substring(statement.length() - 1);
-        
-        if (lastChar.equals("."))
-        {
-            statement = statement.substring(0, statement.length() - 1);
-        }
-            
-        int psnOfI = Methods.findKeyword (statement, "I", 0);
-            int psnOfYou = Methods.findKeyword (statement, "you", psnOfI + 2);
-            
-        String restOfStatement = statement.substring(psnOfI + 2, psnOfYou).trim();
-        return "Why do you " + restOfStatement + " me?";
-    }
-    
     public static String transformIWillStatement(String statement)
     {
             // User format: "I will <something>."
@@ -116,6 +97,26 @@ public class SimpleStructure
         else
             return "Who are you going to " + restOfStatement + " with?";
     }
+    
+    public static String transformIYouStatement(String statement)
+    {
+            //  User format: "I <something> you."
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+            
+        int psnOfI = Methods.findKeyword (statement, "I", 0);
+            int psnOfYou = Methods.findKeyword (statement, "you", psnOfI + 2);
+            
+        String restOfStatement = statement.substring(psnOfI + 2, psnOfYou).trim();
+        return "Why do you " + restOfStatement + " me?";
+    }
+    
     
     public static String transformILikeStatement(String statement)
     {
