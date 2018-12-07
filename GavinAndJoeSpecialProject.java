@@ -11,7 +11,18 @@ public class GavinAndJoeSpecialProject
     static String longWord;
     //Finds longest word.
     public static String findLongestWord(String statement){
-        return "wip";
+        int lastSpace = 0;
+        int spacePsn = statement.indexOf(" ");
+        longWord = statement.substring(0,spacePsn);
+        int longLength = longWord.length();
+        while (spacePsn != -1){
+            lastSpace = spacePsn;
+            spacePsn = statement.indexOf(" ", spacePsn);
+            if (spacePsn - lastSpace > longLength)
+                longWord = statement.substring(lastSpace, spacePsn);
+                longLength = longWord.length();
+        }
+        return longWord;
     }
     //Sends longest word to a text document for storage
     public static void sendToDocument(String longWord) throws IOException{
