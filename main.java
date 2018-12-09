@@ -9,7 +9,10 @@ public class main
     {
         Scanner closerreader=new Scanner(new File("closingstatements.txt"));
         ArrayList<String> closers=new ArrayList();
-        while(closerreader.hasNext()){closers.add(closerreader.nextLine());}
+        
+        while(closerreader.hasNext()){
+            closers.add(closerreader.nextLine());
+        }
         
         String response;                    //  the response that they'll have each
                                             //  time, used to pass into our methods
