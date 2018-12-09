@@ -41,5 +41,7 @@ public class runner
             System.out.println("\n" + Methods.getResponse(response) + "\n");
             response = reader.nextLine();
         }
+        
+        Methods.getCloser();
     }
 }

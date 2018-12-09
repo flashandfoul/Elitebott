@@ -12,9 +12,16 @@ public class Methods
 {
     //  init Statics
     static String name = "";
-    //main method that will be called, has several stages
+    //  These are all variables that will track various things going on in our
+    //  program, they will be useful for debugging and some of them will be
+    //  displayed to the user upon concluding the conversation through the
+    //  getCloser() and remember() methods.
+    public static int wordCount = 0, charCount = 0, backAndFourths = 0, lowPriKeywords = 0,
+                      highPriKeywords = 0, simpleSentStructures = 0, nonCommittalResponses = 0, 
+                      namesRemembered = 0, namesAdded, conversationsStarted;
     
-     public static String getOpener()
+    
+    public static String getOpener()
     {
         return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
     }
@@ -23,9 +30,10 @@ public class Methods
     {
         String response;
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
+        remember(statement);
+        
         if(Conversation.inConversation())
             response = maybeAddName(Conversation.getResponse());
-        remember(statement);
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
@@ -114,8 +122,10 @@ public class Methods
                 if(findKeyword(response, "START CONVERSATION", 0) > -1)
                 {
                     Conversation.startConversation(response.substring(19));
+                    conversationsStarted++;
                     return Conversation.getResponse();
                 }
+                highPriKeywords++;
                 return response;
             } else
                 reader.next();
@@ -143,6 +153,7 @@ public class Methods
                 // replaces the underscores with spaces so it's outputtable
                 response.replaceAll("_", " ");
                 
+                lowPriKeywords++;
                 return response;
             } else {
                 reader.next();
@@ -151,12 +162,21 @@ public class Methods
         return gottacommit.getNonCommitalResponse(statement);   
     }
     
-    private static void remember(String statement)
+    private static void remember(final String statement)
     {
+        //  remembers statistics about each run of the program
+        Scanner s = new Scanner(statement);
+        charCount += statement.length();
+        while(s.hasNext())
+        {
+            wordCount++;
+        }
+        backAndFourths++;
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
         int namePsn = findKeyword(statement,"My name is", 0);
         if (namePsn == 0){
+            namesRemembered++;
             //Finds the position of characters that might come after the name.
             int spacePsn = findKeyword(statement, " ",11);
             int periodPsn = findKeyword(statement, ".",11);
@@ -195,29 +215,34 @@ public class Methods
         //search for simple sentence structures and set response accordingly
         if (findKeyword(statement, "I want to", 0) >= 0)
         {
+            simpleSentStructures++;
             return SimpleStructure.transformIWantToStatement(statement);
         }
         else if (findKeyword(statement, "I want", 0) >= 0)
         {
+            simpleSentStructures++;
             return SimpleStructure.transformIWantStatement(statement);
         }
         else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
         {
+            simpleSentStructures++;
             return SimpleStructure.transformYouMeStatement(statement);
         }
         else if (findKeyword(statement, "I will", 0) >= 0)
         {
+            simpleSentStructures++;
             return SimpleStructure.transformIWillStatement(statement);
         }
         else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
         {
+            simpleSentStructures++;
             return SimpleStructure.transformIYouStatement(statement);
         }
         else if (findKeyword(statement, "I like", 0) >= 0)
         {
+            simpleSentStructures++;
             return SimpleStructure.transformILikeStatement(statement);
         }
-        //return forumlated response
         return findLowPriority(statement);
     }
     
@@ -226,6 +251,7 @@ public class Methods
         Random randy = new Random();
         // 1/7 of the time, Elitebott will add the user's name to the end of the response.
         if (randy.nextInt(7) == 6){
+            namesAdded++;
             //Checks to see if the statement ends in a punctuation mark.
             String endChar = response.substring(response.length()-1);
             Boolean endsPeriod = (endChar.equals("."));
@@ -248,6 +274,11 @@ public class Methods
                 
         }else
         return response;
+    }
+    
+    public static String getCloser()
+    {
+        return "wip";
     }
     
     public static int findKeyword(String statement, String goal, int startPos)
