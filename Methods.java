@@ -21,23 +21,70 @@ public class Methods
     
     public static String getResponse(String statement)
     {
+        String response;
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
         if(Conversation.inConversation())
-            return maybeAddName(Conversation.getResponse());
+            response = maybeAddName(Conversation.getResponse());
         Methods.remember(statement);
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
-
         try {
-            
-            return maybeAddName(findHighPriority(statement).replaceAll("_"," "));
+        response =  maybeAddName(findHighPriority(statement).replaceAll("_"," "));
         } catch(IOException e) {
-            return ("ERROR: " + e);
+        response = ("ERROR: " + e);
         } catch(Exception e) {
-            return ("ERROR: " + e);
+        response = ("ERROR: " + e);
         }
 
+        return getLineBreaks(maybeAddName(response));
+    }
+    
+    private static String getLineBreaks(String s)
+    {
+        final int maxCharPerLine = 80;          // this is the maximum amount of chars we will include
+                                                // in each line, it can be easily adjusted here
+                                                
+                                                
+        String responseWithLineBreaks = "";     // these are little helper strings for the loop
+        String cur;                             // execution
+        
+        Scanner reader = new Scanner(s);        // this Scannner object scans the inputted
+                                                // String from the parameter and will seperated the
+                                                // words to make it easier to handle
+                                                
+        int lastLineIndex;                      // another helper variable for program execution
+        
+        
+        // Main whileLoop, will read through each seperate word, decide if there
+        // is enough space on each line for it, if so it will add it, if not
+        // it will create a new line and put it there
+        while(reader.hasNext())
+        {
+            cur = reader.next();
+            lastLineIndex = responseWithLineBreaks.lastIndexOf("\n") + 2;
+            if(lastLineIndex == 1 && (responseWithLineBreaks.length() + cur.length()) < maxCharPerLine)
+            {
+                if(responseWithLineBreaks.length() == 0) {
+                    responseWithLineBreaks += cur;
+                } else {
+                    responseWithLineBreaks += " " + cur;
+                }
+            } else if(lastLineIndex == 1)
+            {
+                responseWithLineBreaks = responseWithLineBreaks + "\n" + cur;
+            } else if((responseWithLineBreaks.substring(lastLineIndex).length() + cur.length()) < maxCharPerLine)
+            {
+                responseWithLineBreaks += " " + cur;
+            } else
+            {
+                responseWithLineBreaks = responseWithLineBreaks + "\n" + cur;
+            }
+        }
+        
+        // returns the final response with the line breaks now included
+        return responseWithLineBreaks;
+        
     }
     
     public static String findDefinedWord(String statement)
