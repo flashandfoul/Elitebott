@@ -6,9 +6,6 @@
  * conversation.
  */
 
-
-
-
 import java.util.*;
 import java.io.*;
 
@@ -16,8 +13,8 @@ public class runner
 {
     public static void main(String [] args)throws IOException
     {
-        Scanner closerreader=new Scanner(new File("closingstatements.txt"));
-        ArrayList<String> closers=new ArrayList();
+        Scanner closerreader = new Scanner(new File("closingstatements.txt"));
+        ArrayList<String> closers = new ArrayList();
         
         while(closerreader.hasNext()){
             closers.add(closerreader.nextLine());
@@ -42,6 +39,6 @@ public class runner
             response = reader.nextLine();
         }
         
-        Methods.getCloser();
+        System.out.println(Methods.getCloser());
     }
 }

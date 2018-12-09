@@ -28,6 +28,7 @@ public class gottacommit{
         initializearray();
         int responsenumber=dumbo.nextInt(arrayterms);
         String tehresponse=neutralresponse.get(responsenumber);
+        Methods.nonCommittalResponses++;
         return tehresponse;
     }
 }

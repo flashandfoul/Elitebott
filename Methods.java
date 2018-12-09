@@ -2,12 +2,6 @@ import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
 
-/**
- * Write a description of class methods here.
- *
- * @We did it!
- * @version (a version number or a date)
- */
 public class Methods
 {
     //  init Statics
@@ -16,9 +10,9 @@ public class Methods
     //  program, they will be useful for debugging and some of them will be
     //  displayed to the user upon concluding the conversation through the
     //  getCloser() and remember() methods.
-    public static int wordCount = 0, charCount = 0, backAndFourths = 0, lowPriKeywords = 0,
+    public static int wordCount = 0, charCount = 0, backAndForths = 0, lowPriKeywords = 0,
                       highPriKeywords = 0, simpleSentStructures = 0, nonCommittalResponses = 0, 
-                      namesRemembered = 0, namesAdded, conversationsStarted;
+                      namesRemembered = 0, namesAdded = 0, conversationsStarted = 0;
     
     
     public static String getOpener()
@@ -29,11 +23,15 @@ public class Methods
     public static String getResponse(String statement)
     {
         String response;
-        // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
+        
+        
         remember(statement);
         
+        
+        // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
         if(Conversation.inConversation())
             response = maybeAddName(Conversation.getResponse());
+            
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
@@ -170,8 +168,11 @@ public class Methods
         while(s.hasNext())
         {
             wordCount++;
+            s.next();
         }
-        backAndFourths++;
+        backAndForths++;
+        
+        
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
         int namePsn = findKeyword(statement,"My name is", 0);
@@ -278,8 +279,13 @@ public class Methods
     
     public static String getCloser()
     {
-        return "wip";
+        String result = "\n" + String.format("%-50s%n","Oh, Goodbye then!");
+        result += String.format("%-20s%10d", "Total chars inputted:",charCount) + "\n";
+        result += String.format("%-20s%10d", "Total words inputted:",wordCount) + "\n";
+        result += String.format("%-20s%10d", "Total back-and-forths:",backAndForths);
+        return result;
     }
+    
     
     public static int findKeyword(String statement, String goal, int startPos)
     {
