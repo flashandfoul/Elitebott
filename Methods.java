@@ -25,7 +25,7 @@ public class Methods
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
         if(Conversation.inConversation())
             response = maybeAddName(Conversation.getResponse());
-        Methods.remember(statement);
+        remember(statement);
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
         // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
@@ -37,12 +37,12 @@ public class Methods
         response = ("ERROR: " + e);
         }
 
-        return getLineBreaks(maybeAddName(response));
+        return getLineBreaks(response);
     }
     
     private static String getLineBreaks(String s)
     {
-        final int maxCharPerLine = 80;          // this is the maximum amount of chars we will include
+        final int maxCharPerLine = 70;          // this is the maximum amount of chars we will include
                                                 // in each line, it can be easily adjusted here
                                                 
                                                 
@@ -158,12 +158,12 @@ public class Methods
         int namePsn = findKeyword(statement,"My name is ", 0);
         if (namePsn > 0){
             //Finds the position of characters that might come after the name.
-            int spacePsn = findKeyword(statement, " ",10);
-            int periodPsn = findKeyword(statement, ".",10);
-            int exclamPsn = findKeyword(statement, "!",10);
-            int commaPsn = findKeyword(statement, ",",10);
-            int dashPsn = findKeyword(statement, "-",10);
-            int questPsn = findKeyword(statement, "?",10);
+            int spacePsn = findKeyword(statement, " ",11);
+            int periodPsn = findKeyword(statement, ".",11);
+            int exclamPsn = findKeyword(statement, "!",11);
+            int commaPsn = findKeyword(statement, ",",11);
+            int dashPsn = findKeyword(statement, "-",11);
+            int questPsn = findKeyword(statement, "?",11);
         
             //Here we find the first of these things to appear.
             int lowest = statement.length();

@@ -20,7 +20,7 @@ public class main
         Scanner reader = new Scanner(System.in);
         
         //  prints out a default greeting used by the EliteBot.
-        System.out.println(Methods.getOpener());
+        System.out.println(Methods.getOpener() + "\n");
         
         //  gets the client's response
         response = reader.nextLine();
@@ -29,7 +29,7 @@ public class main
         //  set sentinal value
         while(!closers.contains((response.replaceAll("_"," ")).toLowerCase()))
         {
-            System.out.println(Methods.getResponse(response));
+            System.out.println("\n" + Methods.getResponse(response) + "\n");
             response = reader.nextLine();
         }
     }
