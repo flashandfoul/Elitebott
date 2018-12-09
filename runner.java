@@ -1,9 +1,18 @@
-// this is the main class
-// pretty much our only class
-//in computer class
+/*
+ * This is the main runner class, we will use this to run the
+ * bot, this program executes through a sentinel controlled while
+ * loop, and opens the conversation with a getOpener method.
+ * After the conversation stops, the bot releases statistics for the
+ * conversation.
+ */
+
+
+
+
 import java.util.*;
 import java.io.*;
-public class main
+
+public class runner
 {
     public static void main(String [] args)throws IOException
     {
