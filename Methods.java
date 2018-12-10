@@ -280,9 +280,9 @@ public class Methods
     public static String getCloser()
     {
         String result = "\n" + String.format("%-50s%n","Oh, Goodbye then!");
-        result += String.format("%-20s%10d", "Total chars inputted:",charCount) + "\n";
-        result += String.format("%-20s%10d", "Total words inputted:",wordCount) + "\n";
-        result += String.format("%-20s%10d", "Total back-and-forths:",backAndForths);
+        result += String.format("%-25s%-10d", "Total chars inputted:",charCount) + "\n";
+        result += String.format("%-25s%-10d", "Total words inputted:",wordCount) + "\n";
+        result += String.format("%-25s%-10d", "Total back-and-forths:",backAndForths);
         return result;
     }
     
