@@ -79,15 +79,15 @@ public class SimpleStructure
         Random generator = new Random();
         int rndm = generator.nextInt(5);
         if (rndm == 0)
-            return "What makes you think that I " + restOfStatement + " you?";
+            return "What makes you think that I " + transformPronouns(restOfStatement) + " you?";
         else if (rndm == 1)
-            return "I would never " + restOfStatement + " you. Disgusting!";
+            return "I would never " + transformPronouns(restOfStatement) + " you. Disgusting!";
         else if (rndm == 2)
-            return "Okay, what of it?";
+            return "Okay, maybe I do " + transformPronouns(restOfStatement) + " you. What of it?";
         else if (rndm == 3)
-            return "Don't tell anyone, especially your parents.";
+            return "Don't tell anyone that I " + transformPronouns(restOfStatement) + ", especially your parents.";
         else if (rndm == 4)
-            return "I'm confused. Why would I do that?";
+            return "I'm confused. Why would I " + transformPronouns(restOfStatement) + " you?";
         else
             return "Uhh, you confused me. That or my creators screwed up the RNG. Again.";
     }
