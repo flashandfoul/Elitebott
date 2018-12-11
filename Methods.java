@@ -203,7 +203,6 @@ public class Methods
             
             //name is a comma and a space and a name.
             name = ", "+statement.substring(11,lowest);
-            System.out.println(name);
         }
     }
     
