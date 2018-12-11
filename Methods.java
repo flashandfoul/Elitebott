@@ -23,11 +23,7 @@ public class Methods
     public static void getResponse(String statement) throws InterruptedException
     {
         String response;
-        
-        
-        remember(statement);
-        
-        
+               
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
         if(Conversation.inConversation())
             response = maybeAddName(Conversation.getResponse());
@@ -160,7 +156,7 @@ public class Methods
         return gottacommit.getNonCommitalResponse(statement);   
     }
     
-    private static void remember(final String statement)
+    public static void remember(final String statement)
     {
         //  remembers statistics about each run of the program
         Scanner s = new Scanner(statement);
