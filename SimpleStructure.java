@@ -66,7 +66,17 @@ public class SimpleStructure
         int psnOfMe = Methods.findKeyword (statement, "me", psnOfYou + 3);
             
         String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
-        return "What makes you think that I " + restOfStatement + " you?";
+        // Randomize Responses
+        Random generator = new Random();
+        int rndm = generator.nextInt(4);
+        if (rndm = 0)
+            return "What makes you think that I " + restOfStatement + " you?";
+        else if (rndm = 1)
+            return "I would never " + restOfStatement + " you. Disgusting!";
+        else if (rndm = 2)
+            return "Okay, what of it?";
+        else if (rndm = 3)
+            return "Don't tell anyone, especially your parents.";
     }
     
     public static String transformIWillStatement(String statement)
