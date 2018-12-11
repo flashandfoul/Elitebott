@@ -20,7 +20,7 @@ public class Methods
         return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
     }
     
-    public static String getResponse(String statement)
+    public static void getResponse(String statement)
     {
         String response;
         
@@ -43,7 +43,7 @@ public class Methods
         response = ("ERROR: " + e);
         }
 
-        return getLineBreaks(response);
+        timerstuff.printLikeHuman(getLineBreaks(response));
     }
     
     private static String getLineBreaks(String s)
