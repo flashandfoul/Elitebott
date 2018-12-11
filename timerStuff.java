@@ -2,6 +2,7 @@
 import java.util.Random;
 public class timerStuff{
     public static void printLikeHuman(String s) throws InterruptedException{
+        Thread.sleep(1000);
         Random wobble=new Random();
         for(int i = 0; i < s.length(); i++)
         {

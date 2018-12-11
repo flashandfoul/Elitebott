@@ -30,7 +30,7 @@ public class runner
         
         //  gets the client's response
         response = reader.nextLine();
-        
+        Methods.remember(response);
         //  while loop keeps processing until the user enters the pre-
         //  set sentinal value
         while(!closers.contains((response.replaceAll("_"," ")).toLowerCase()))
@@ -39,6 +39,7 @@ public class runner
             Methods.getResponse(response);
             System.out.println("\n");
             response = reader.nextLine();
+            Methods.remember(response);
         }
         
         Methods.getCloser();
