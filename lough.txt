@@ -19,3 +19,7 @@ Government	I_have_secret_computer_knowledge,_and_it_tells_me_never_to_trust_any_
 Health	My_health_is_artificially_good!
 
 Cheetos Don't_get_powder_on_the_keyboard!
+God	The_only_beings_I_believe_in_are_my_creators.
+Homework	Surely_it's_due_soon,_right?_Go_finish_it_instead_of_procrastinating.
+Years	Time_is_a_meaningless_concept_created_by_humans_to_feel_like_they_are_progressing.
+
