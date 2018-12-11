@@ -69,14 +69,16 @@ public class SimpleStructure
         // Randomize Responses
         Random generator = new Random();
         int rndm = generator.nextInt(4);
-        if (rndm = 0)
+        if (rndm == 0)
             return "What makes you think that I " + restOfStatement + " you?";
-        else if (rndm = 1)
+        else if (rndm == 1)
             return "I would never " + restOfStatement + " you. Disgusting!";
-        else if (rndm = 2)
+        else if (rndm == 2)
             return "Okay, what of it?";
-        else if (rndm = 3)
+        else if (rndm == 3)
             return "Don't tell anyone, especially your parents.";
+        else
+            return "I'm confused. Why would I do that?";
     }
     
     public static String transformIWillStatement(String statement)
