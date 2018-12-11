@@ -250,7 +250,7 @@ public class Methods
     {
         Random randy = new Random();
         // 1/7 of the time, Elitebott will add the user's name to the end of the response.
-        if (randy.nextInt(7) == 6){
+        if (randy.nextInt(7) < 1000){
             namesAdded++;
             //Checks to see if the statement ends in a punctuation mark.
             String endChar = response.substring(response.length()-1);
@@ -258,24 +258,21 @@ public class Methods
             Boolean endsQuest = (endChar.equals("?"));
             Boolean endsExclam = (endChar.equals("!"));
             
-            Boolean endsEllipse = response.substring(response.length()-3).equals("...");
+            Boolean endsEllipse = (response.substring(response.length()-4).equals("...."));
             
             //Cuts off last character.
-            if (endsPeriod || endsQuest || endsExclam)
-                response = response.substring(0,response.length()-1);
             
-            //The 2 not 3 cuz period cut off last.
+            //Cuts 3 not 4 cuz period cut off last.
             if (endsEllipse){
-                response = response.substring(0,response.length()-2);
-                return response+name+"...";
+                return response.substring(0,response.length()-3)+name+"....";
             }
             //Adds name and last character if neccesary.
             if (endsPeriod)
-                return response+name+".";
+                return response.substring(0,response.length()-1)+name+".";
             else if (endsQuest)
-                return response+name+"?";
+                return response.substring(0,response.length()-1)+name+"?";
             else if (endsExclam)
-                return response+name+"!";
+                return response.substring(0,response.length()-1)+name+"!";
             else
                 return response+name;
                 
