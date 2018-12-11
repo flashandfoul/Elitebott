@@ -10,7 +10,6 @@ public class Conversation
     
     public static String getResponse() { 
         return "wip"; 
-        
     }
     
     public static void startConversation(String s) {
@@ -19,6 +18,5 @@ public class Conversation
     
     public static void endConversation() {
         inConvo = false;
-        
     }
 }

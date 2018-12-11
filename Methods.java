@@ -20,7 +20,7 @@ public class Methods
         return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
     }
     
-    public static String getResponse(String statement)
+    public static void getResponse(String statement) throws InterruptedException
     {
         String response;
         
@@ -43,10 +43,10 @@ public class Methods
         response = ("ERROR: " + e);
         }
 
-        return getLineBreaks(response);
+        timerStuff.printLikeHuman(getLineBreaks(response));
     }
     
-    private static String getLineBreaks(String s)
+    private static String getLineBreaks(String s) throws InterruptedException
     {
         final int maxCharPerLine = 70;          // this is the maximum amount of chars we will include
                                                 // in each line, it can be easily adjusted here
@@ -176,15 +176,15 @@ public class Methods
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
         int namePsn = findKeyword(statement,"My name is", 0);
-        if (namePsn == 0){
+        if (namePsn > 0){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
-            int spacePsn = findKeyword(statement, " ",11);
-            int periodPsn = findKeyword(statement, ".",11);
-            int exclamPsn = findKeyword(statement, "!",11);
-            int commaPsn = findKeyword(statement, ",",11);
-            int dashPsn = findKeyword(statement, "-",11);
-            int questPsn = findKeyword(statement, "?",11);
+            int spacePsn = findKeyword(statement, " ",namePsn+11);
+            int periodPsn = findKeyword(statement, ".",namePsn+11);
+            int exclamPsn = findKeyword(statement, "!",namePsn+11);
+            int commaPsn = findKeyword(statement, ",",namePsn+11);
+            int dashPsn = findKeyword(statement, "-",namePsn+11);
+            int questPsn = findKeyword(statement, "?",namePsn+11);
         
             //Here we find the first of these things to appear.
             int lowest = statement.length();
@@ -202,7 +202,7 @@ public class Methods
             lowest = questPsn;
             
             //name is a comma and a space and a name.
-            name = ", "+statement.substring(11,lowest);
+            name = ", "+statement.substring(namePsn+11,lowest);
         }
     }
     
@@ -258,10 +258,17 @@ public class Methods
             Boolean endsQuest = (endChar.equals("?"));
             Boolean endsExclam = (endChar.equals("!"));
             
+            Boolean endsEllipse = response.substring(response.length()-3).equals("...");
+            
             //Cuts off last character.
             if (endsPeriod || endsQuest || endsExclam)
                 response = response.substring(0,response.length()-1);
             
+            //The 2 not 3 cuz period cut off last.
+            if (endsEllipse){
+                response = response.substring(0,response.length()-2);
+                return response+name+"...";
+            }
             //Adds name and last character if neccesary.
             if (endsPeriod)
                 return response+name+".";

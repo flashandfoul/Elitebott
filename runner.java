@@ -11,7 +11,7 @@ import java.io.*;
 
 public class runner
 {
-    public static void main(String [] args)throws IOException
+    public static void main(String [] args)throws Exception
     {
         Scanner closerreader = new Scanner(new File("closingstatements.txt"));
         ArrayList<String> closers = new ArrayList();
@@ -35,7 +35,9 @@ public class runner
         //  set sentinal value
         while(!closers.contains((response.replaceAll("_"," ")).toLowerCase()))
         {
-            System.out.println("\n" + Methods.getResponse(response) + "\n");
+            System.out.println();
+            Methods.getResponse(response);
+            System.out.println();
             response = reader.nextLine();
         }
         

@@ -9,6 +9,19 @@ I...don't_know_how_to_respond_to_that.
 Rub_a_dub_dub,_fish_goes_blub_blub...
 Woah_There!_Slow_down_buddy!
 Ahh,_you_think_you_can_stump_me,_don't_you?_I_can_see_through_you...
+A_bird_chirps_in_the_wind._All_is_silent.
+A_black_cat_crosses_your_path.
+A_group_of_orcs_raids_the_tavern.
+You_gain_53exp._Level_up!
+Sorry,_you'll_have_to_be_more_clear.
+public_static_void_main(String[]args)
+import_java.util.Human;
+riddle_me_this,riddle_me_that,the_cat_named_Chris_threw_away_his_hat.
+sentient_wentient._Who_needs_it?
+You_my_good_human_have_found_a_glitch_in_the_system.
+Let's_have_a_closer_look_at_that_statement.
+Are_you_sure_about_that?
+
 
 
 
