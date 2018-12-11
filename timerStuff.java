@@ -1,8 +1,6 @@
 
-public class timerStuff
-{
-    public static void printLikeHuman(String s)
-    {
+public class timerStuff{
+    public static void printLikeHuman(String s){
         
     }
 }
