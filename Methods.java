@@ -258,10 +258,17 @@ public class Methods
             Boolean endsQuest = (endChar.equals("?"));
             Boolean endsExclam = (endChar.equals("!"));
             
+            Boolean endsEllipse = response.substring(response.length()-3).equals("...");
+            
             //Cuts off last character.
             if (endsPeriod || endsQuest || endsExclam)
                 response = response.substring(0,response.length()-1);
             
+            //The 2 not 3 cuz period cut off last.
+            if (endsEllipse){
+                response = response.substring(0,response.length()-2);
+                return response+name+"...";
+            }
             //Adds name and last character if neccesary.
             if (endsPeriod)
                 return response+name+".";
