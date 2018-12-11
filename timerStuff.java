@@ -1,4 +1,4 @@
-
+//typey like person
 public class timerStuff{
     public static void printLikeHuman(String s) throws InterruptedException{
         for(int i = 0; i < s.length(); i++)
