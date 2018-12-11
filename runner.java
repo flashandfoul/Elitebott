@@ -35,7 +35,9 @@ public class runner
         //  set sentinal value
         while(!closers.contains((response.replaceAll("_"," ")).toLowerCase()))
         {
-            System.out.println("\n" + Methods.getResponse(response) + "\n");
+            System.out.println();
+            Methods.getResponse(response);
+            System.out.println();
             response = reader.nextLine();
         }
         
