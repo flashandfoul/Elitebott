@@ -176,7 +176,7 @@ public class Methods
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
         int namePsn = findKeyword(statement,"My name is", 0);
-        if (namePsn == 0){
+        if (namePsn > 0){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
             int spacePsn = findKeyword(statement, " ",11);
@@ -202,7 +202,7 @@ public class Methods
             lowest = questPsn;
             
             //name is a comma and a space and a name.
-            name = ", "+statement.substring(11,lowest);
+            name = ", "+statement.substring(namePsn+11,lowest);
         }
     }
     
