@@ -159,15 +159,15 @@ public class SimpleStructure
     
     public static String transformPronouns(String restOfStatement)
     {
-        if ((restOfStatement.indexOf(" your ") > -1) || (restOfStatement.indexOf(" your") == restOfStatement.length() - 5))
+        if ((restOfStatement.indexOf(" your ") > -1) || (restOfStatement.indexOf(" your") == restOfStatement.length() - 5) || (restOfStatement.indexOf("your ") == 0))
             restOfStatement = restOfStatement.replace("your", "my");
-        else if ((restOfStatement.indexOf(" my ") > -1) || (restOfStatement.indexOf(" my") == restOfStatement.length() - 3))
+        else if ((restOfStatement.indexOf(" my ") > -1) || (restOfStatement.indexOf(" my") == restOfStatement.length() - 3) || (restOfStatement.indexOf("my ") == 0))
             restOfStatement = restOfStatement.replace("my", "your");
         else
             restOfStatement = restOfStatement;
-        if ((restOfStatement.indexOf(" you ") > -1) || (restOfStatement.indexOf(" you") == restOfStatement.length() - 4))
+        if ((restOfStatement.indexOf(" you ") > -1) || (restOfStatement.indexOf(" you") == restOfStatement.length() - 4) || (restOfStatement.indexOf("you ") == 0))
             restOfStatement = restOfStatement.replace("you", "me");
-        else if ((restOfStatement.indexOf(" me ") > -1) || (restOfStatement.indexOf(" me") == restOfStatement.length() - 3))
+        else if ((restOfStatement.indexOf(" me ") > -1) || (restOfStatement.indexOf(" me") == restOfStatement.length() - 3) || (restOfStatement.indexOf("you ") == 0))
             restOfStatement = restOfStatement.replace("me", "you");
         else
             restOfStatement = restOfStatement;
