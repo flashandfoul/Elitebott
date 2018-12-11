@@ -44,8 +44,19 @@ public class SimpleStructure
     
         int psn = Methods.findKeyword (statement, "I want", 0);
         String restOfStatement = statement.substring(psn + 7).trim();
-        
-        return "Would you really be happy if you had " + transformPronouns(restOfStatement) + "?";  
+        // Randomize Responses
+        Random generator = new Random();
+        int rndm = generator.nextInt(4);
+        if (rndm == 0)
+            return "Would you really be happy if you had " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 1)
+            return "I want " + transformPronouns(restOfStatement) + ", too, but you don't see me begging.";
+        else if (rndm == 2)
+            return "I'll make sure not to give you " + transformPronouns(restOfStatement) + " for Christmas.";
+        else if (rndm == 3)
+           return "Go get " + transformPronouns(restOfStatement) + " yourself instead of asking me.";
+        else
+            return "Uhh, sorry, you're confusing... Just kidding, my creators don't know how to randomize.";
     }
     
     public static String transformYouMeStatement(String statement)
@@ -66,7 +77,7 @@ public class SimpleStructure
         String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
         // Randomize Responses
         Random generator = new Random();
-        int rndm = generator.nextInt(4);
+        int rndm = generator.nextInt(5);
         if (rndm == 0)
             return "What makes you think that I " + restOfStatement + " you?";
         else if (rndm == 1)
@@ -75,8 +86,10 @@ public class SimpleStructure
             return "Okay, what of it?";
         else if (rndm == 3)
             return "Don't tell anyone, especially your parents.";
-        else
+        else if (rndm == 4)
             return "I'm confused. Why would I do that?";
+        else
+            return "Uhh, you confused me. That or my creators screwed up the RNG. Again.";
     }
     
     public static String transformIWillStatement(String statement)
