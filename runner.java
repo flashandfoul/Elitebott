@@ -37,10 +37,10 @@ public class runner
         {
             System.out.println();
             Methods.getResponse(response);
-            System.out.println();
+            System.out.println("\n");
             response = reader.nextLine();
         }
         
-        System.out.println(Methods.getCloser());
+        Methods.getCloser();
     }
 }
