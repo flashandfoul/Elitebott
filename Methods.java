@@ -43,7 +43,7 @@ public class Methods
         response = ("ERROR: " + e);
         }
 
-        timerstuff.printLikeHuman(getLineBreaks(response));
+        timerStuff.printLikeHuman(getLineBreaks(response));
     }
     
     private static String getLineBreaks(String s)
