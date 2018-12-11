@@ -44,9 +44,7 @@ public class SimpleStructure
     
         int psn = Methods.findKeyword (statement, "I want", 0);
         String restOfStatement = statement.substring(psn + 7).trim();
-        if (restOfStatement.equals("you")){
-            restOfStatement = "me";
-        }
+        
         return "Would you really be happy if you had " + transformPronouns(restOfStatement) + "?";  
     }
     
