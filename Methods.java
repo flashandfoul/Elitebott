@@ -179,12 +179,12 @@ public class Methods
         if (namePsn > 0){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
-            int spacePsn = findKeyword(statement, " ",11);
-            int periodPsn = findKeyword(statement, ".",11);
-            int exclamPsn = findKeyword(statement, "!",11);
-            int commaPsn = findKeyword(statement, ",",11);
-            int dashPsn = findKeyword(statement, "-",11);
-            int questPsn = findKeyword(statement, "?",11);
+            int spacePsn = findKeyword(statement, " ",namePsn+11);
+            int periodPsn = findKeyword(statement, ".",namePsn+11);
+            int exclamPsn = findKeyword(statement, "!",namePsn+11);
+            int commaPsn = findKeyword(statement, ",",namePsn+11);
+            int dashPsn = findKeyword(statement, "-",namePsn+11);
+            int questPsn = findKeyword(statement, "?",namePsn+11);
         
             //Here we find the first of these things to appear.
             int lowest = statement.length();
