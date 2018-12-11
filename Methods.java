@@ -20,7 +20,7 @@ public class Methods
         return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
     }
     
-    public static void getResponse(String statement)
+    public static void getResponse(String statement) throws InterruptedException
     {
         String response;
         
@@ -46,7 +46,7 @@ public class Methods
         timerStuff.printLikeHuman(getLineBreaks(response));
     }
     
-    private static String getLineBreaks(String s)
+    private static String getLineBreaks(String s) throws InterruptedException
     {
         final int maxCharPerLine = 70;          // this is the maximum amount of chars we will include
                                                 // in each line, it can be easily adjusted here
