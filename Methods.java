@@ -280,13 +280,13 @@ public class Methods
         return response;
     }
     
-    public static String getCloser()
+    public static void getCloser() throws Exception
     {
-        String result = "\n" + String.format("%-50s%n","Oh, Goodbye then!");
+        String result = "\n" + String.format("%-20s%n","Oh, Goodbye then!");
         result += String.format("%-25s%-10d", "Total chars inputted:",charCount) + "\n";
         result += String.format("%-25s%-10d", "Total words inputted:",wordCount) + "\n";
         result += String.format("%-25s%-10d", "Total back-and-forths:",backAndForths);
-        return result;
+        timerStuff.printLikeHuman(result);
     }
     
     
