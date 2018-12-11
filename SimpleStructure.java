@@ -26,7 +26,7 @@ public class SimpleStructure
             
         int psn = Methods.findKeyword(statement, "I want to", 0);
         String restOfStatement = statement.substring(psn + 9).trim();
-        return "What would it mean to " + restOfStatement + "?";
+        return "What would it mean to " + transformPronouns(restOfStatement) + "?";
     }
     
     public static String transformIWantStatement(String statement)
@@ -47,7 +47,7 @@ public class SimpleStructure
         if (restOfStatement.equals("you")){
             restOfStatement = "me";
         }
-        return "Would you really be happy if you had " + restOfStatement + "?";  
+        return "Would you really be happy if you had " + transformPronouns(restOfStatement) + "?";  
     }
     
     public static String transformYouMeStatement(String statement)
@@ -89,13 +89,13 @@ public class SimpleStructure
         Random generator = new Random();
         int rndm = generator.nextInt(4);
         if (rndm == 0)
-            return "How are you going to " + restOfStatement + "?";
+            return "How are you going to " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 1)
-            return "Why are you going to " + restOfStatement + "?";
+            return "Why are you going to " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 2)
-            return "When are you going to " + restOfStatement + "?";
+            return "When are you going to " + transformPronouns(restOfStatement) + "?";
         else
-            return "Who are you going to " + restOfStatement + " with?";
+            return "Who are you going to " + transformPronouns(restOfStatement) + " with?";
     }
     
     public static String transformIYouStatement(String statement)
@@ -138,13 +138,29 @@ public class SimpleStructure
         Random generator = new Random();
         int rndm = generator.nextInt(3);
         if (rndm == 0)
-            return "Why do you like " + restOfStatement + "?";
+            return "Why do you like " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 1)
-            return "I bet I like " + restOfStatement + " more than you.";
+            return "I bet I like " + transformPronouns(restOfStatement) + " more than you.";
         else if (rndm == 2)
             return "Is there anything you like better?";
         else
-            return "Sorry, I'd love to respond to that,\n" +
-                   "but my creators screwed up a random number generator.";
+            return "Sorry, I'd love to respond to that, but my creators screwed up a random number generator.";
+    }
+    
+    public static String transformPronouns(String restOfStatement)
+    {
+        if ((restOfStatement.indexOf(" your ") > -1) || (restOfStatement.indexOf(" your") == restOfStatement.length() - 5))
+            restOfStatement = restOfStatement.replace("your", "my");
+        else if ((restOfStatement.indexOf(" my ") > -1) || (restOfStatement.indexOf(" my") == restOfStatement.length() - 3))
+            restOfStatement = restOfStatement.replace("my", "your");
+        else
+            restOfStatement = restOfStatement;
+        if ((restOfStatement.indexOf(" you ") > -1) || (restOfStatement.indexOf(" you") == restOfStatement.length() - 4))
+            restOfStatement = restOfStatement.replace("you", "me");
+        else if ((restOfStatement.indexOf(" me ") > -1) || (restOfStatement.indexOf(" me") == restOfStatement.length() - 3))
+            restOfStatement = restOfStatement.replace("me", "you");
+        else
+            restOfStatement = restOfStatement;
+        return restOfStatement;
     }
 }
