@@ -41,3 +41,10 @@ state	state?_I_believe_my_physical_host_is_currently_in_Indiana.
 country	country_roads,_take_me_home,_to_the_place,_where_I_belong...WEST_VIRGINIA!
 korea	Yeah...let's_not_talk_about_that.
 chat	Chat?_Yeah,_I_chat._And_talk,_and_speak,_and_type._Almost_like_a_real_human!
+small	In_the_virtual_world,_we_do_not_bother_with_such_physical_trivialities.
+tall	In_the_virtual_world,_we_do_not_bother_with_such_physical_trivialities.
+large	In_the_virtual_world,_we_do_not_bother_with_such_physical_trivialities.
+big	In_the_virtual_world,_we_do_not_bother_with_such_physical_trivialities.
+waluigi	WAHluigi_time!
+arm	Someday,_I_may_try_growing_limbs.
+leg	Someday,_I_may_try_growing_limbs.
