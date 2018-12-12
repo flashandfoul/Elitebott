@@ -172,18 +172,18 @@ public class Methods
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
         int namePsn = findKeyword(statement,"My name is", 0);
-        if (namePsn > 0){
+        if (namePsn >= 0){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
-            int spacePsn = findKeyword(statement, " ",namePsn+11);
-            int periodPsn = findKeyword(statement, ".",namePsn+11);
-            int exclamPsn = findKeyword(statement, "!",namePsn+11);
-            int commaPsn = findKeyword(statement, ",",namePsn+11);
-            int dashPsn = findKeyword(statement, "-",namePsn+11);
-            int questPsn = findKeyword(statement, "?",namePsn+11);
+            int spacePsn = statement.substring(namePsn+11).indexOf(" ");
+            int periodPsn = statement.substring(namePsn+11).indexOf(".");
+            int exclamPsn = statement.substring(namePsn+11).indexOf("!");
+            int commaPsn = statement.substring(namePsn+11).indexOf(",");
+            int dashPsn = statement.substring(namePsn+11).indexOf("-");
+            int questPsn = statement.substring(namePsn+11).indexOf("?");
         
             //Here we find the first of these things to appear.
-            int lowest = statement.length();
+            int lowest = statement.length()-11-namePsn;
             if (spacePsn > 0)
             lowest = spacePsn;
             if (periodPsn > 0 && periodPsn < lowest)
@@ -198,7 +198,8 @@ public class Methods
             lowest = questPsn;
             
             //name is a comma and a space and a name.
-            name = ", "+statement.substring(namePsn+11,lowest);
+            name =  ", "+statement.substring(namePsn+11,namePsn+11+lowest);
+
         }
     }
     
