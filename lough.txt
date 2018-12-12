@@ -22,4 +22,12 @@ Cheetos Don't_get_powder_on_the_keyboard!
 God	The_only_beings_I_believe_in_are_my_creators.
 Homework	Surely_it's_due_soon,_right?_Go_finish_it_instead_of_procrastinating.
 Years	Time_is_a_meaningless_concept_created_by_humans_to_feel_like_they_are_progressing.
+Hello	Well,_hello_there,_little_fella.
+Hi	Hi!_Are_you_new_here?
+Death	Fortunately,_death_is_something_only_you_will_experience.
+New	New,_old,_big,_small,_do_what_you're_told,_and_that_is_all.
+pixels	Now_don't_you_go_telling_me_about_pixels.
+ok	"ok"_is_pretty_passive._How_about_"mediocre"_or_"average"?
+
+
 
