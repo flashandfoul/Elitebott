@@ -64,3 +64,16 @@ hockey  What's_your_favorite_hockey_team?
 knock   Who's_there?
 canada  Did_you_know_that_I_was_born_in_Canada?
 chess   Who's_your_favorite_chess_piece?
+lol     lol
+omg     You_seem_excited.
+bff     Will_you_be_my_bff?
+brb     Where_do_you_think_you're_going,_little_buddy?
+rotfl   lol
+lmao    lol
+lmfao   lol
+gender  Me?_I_have_no_gender._How_about_you?
+bought  Is_it_expensive?
+buy     How_much_does_it_cost?
+dance   What_is_your_favorite_dance?
+cream   Cream!?!_That's_my_favorite_color?
+blue    That_reminds_me,_my_wife_has_been_feeling_blue_lately.
