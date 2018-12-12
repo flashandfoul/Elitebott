@@ -28,6 +28,16 @@ Death	Fortunately,_death_is_something_only_you_will_experience.
 New	New,_old,_big,_small,_do_what_you're_told,_and_that_is_all.
 pixels	Now_don't_you_go_telling_me_about_pixels.
 ok	"ok"_is_pretty_passive._How_about_"mediocre"_or_"average"?
-
-
-
+no	No?_Ah,_well,_do_as_you_please.
+yes	Yes?_As_agreeable_as_you_are,_you're_likely_to_get_scammed_eventually.
+drug	Hallucinogens,_opioids...amphetamines?
+drugs	Hallucinogens,_opioids...amphetamines?
+science	I_have_a_very_scientific_mind,_you_know._For_a_computer.
+chocolate	Oh,_I_love_chocolate!_If_only_I_could_eat_it...
+mexico	I_rate_mexico_as_one_of_the_top_195_countries.
+america	Oh,_right...those_guys.
+japan	*squee!*_nihongo_o_hanasu?
+state	state?_I_believe_my_physical_host_is_currently_in_Indiana.
+country	country_roads,_take_me_home,_to_the_place,_where_I_belong...WEST_VIRGINIA!
+korea	Yeah...let's_not_talk_about_that.
+chat	Chat?_Yeah,_I_chat._And_talk,_and_speak,_and_type._Almost_like_a_real_human!
