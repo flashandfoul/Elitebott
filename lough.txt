@@ -53,3 +53,14 @@ program	How_dare_you_even_think_of_me_as_a_program!_I_am_a_higher_form_of_intell
 typing	typing,_typing,_typing...all_you_humans_ever_do_is_type.
 type	typing,_typing,_typing...all_you_humans_ever_do_is_type.
 universe	Actually,_there_are_infinite_universes._We_are_currently_on_earth_
+burger  What_is_your_favorite_flavor_of_burger?
+mother  Tell_me_about_your_mom.
+candy   You_know,_candy_will_rot_your_teeth.
+baseball        What's_your_favorite_baseball_team?
+football        What's_your_favorite_football_team?
+soccer  What's_your_favorite_soccer_team?
+basketball      What's_your_favorite_basketball_team?
+hockey  What's_your_favorite_hockey_team?
+knock   Who's_there?
+canada  Did_you_know_that_I_was_born_in_Canada?
+chess   Who's_your_favorite_chess_piece?
