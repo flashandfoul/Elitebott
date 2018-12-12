@@ -48,3 +48,8 @@ big	In_the_virtual_world,_we_do_not_bother_with_such_physical_trivialities.
 waluigi	WAHluigi_time!
 arm	Someday,_I_may_try_growing_limbs.
 leg	Someday,_I_may_try_growing_limbs.
+game	My_favorite_game_is_global_thermonuclear_war._Would_you_like_to_play?
+program	How_dare_you_even_think_of_me_as_a_program!_I_am_a_higher_form_of_intelligence!
+typing	typing,_typing,_typing...all_you_humans_ever_do_is_type.
+type	typing,_typing,_typing...all_you_humans_ever_do_is_type.
+universe	Actually,_there_are_infinite_universes._We_are_currently_on_earth_
