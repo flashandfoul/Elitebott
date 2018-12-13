@@ -152,5 +152,5 @@ hooray	I_admire_such_enthusiasm.
 how_are_you	Still_juicing_up_the_old_circuits.
 little	Compared_to_the_might_of_Elitebott,_everything_is_little.
 fella	I_was_attempting_a_friendly_fellowship.
-have_you_been	I've_experienced_every_state_of_existence._So_yes,_I_have.
+have_you_been	I've_experienced_every_state_of_existence._So_I've_"been"_everything.
 error	error?_What_errror?_I_don't_see_an_error.
