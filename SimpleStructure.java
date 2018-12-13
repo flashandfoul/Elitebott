@@ -195,7 +195,7 @@ public class SimpleStructure
         if (rndm == 0)
             return "Why do you like " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 1)
-            return "I bet I like " + transformPronouns(restOfStatement) + " more than you.";
+            return "I bet I like " + transformPronouns(restOfStatement) + " more than you do.";
         else if (rndm == 2)
             return "I'm sure you like " + transformPronouns(restOfStatement) + ", but is there anything you like better?";
         else
@@ -216,17 +216,21 @@ public class SimpleStructure
         }
         
         int psn = Methods.findKeyword (statement, "I am", 0);
-        String restOfStatement = statement.substring(psn + 7).trim();
+        String restOfStatement = statement.substring(psn + 5).trim();
         
         // Randomize Responses
         Random generator = new Random();
-        int rndm = generator.nextInt(4);
+        int rndm = generator.nextInt(6);
         if (rndm == 0)
             return "Ah, I see. I am " + transformPronouns(restOfStatement) + " too.";
         else if (rndm == 1)
             return "When did you decide that you wanted to be " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 2)
-            return "How is the fact that you are " + transformPronouns(restOfStatement) + " relevant?";
+            return "How is the fact that you are " + transformPronouns(restOfStatement) + " relevant to my existence?";
+        else if (rndm == 3)
+            return "I'm pleased to know that you are " + transformPronouns(restOfStatement) + ".";
+        else if (rndm == 4)
+            return "How would your mom react if she knew that you were " + transformPronouns(restOfStatement) + "?";
         else
             return "Uh oh, I seem to be drawing a blank here. I think my creators must have forgotten something. :(";
     }

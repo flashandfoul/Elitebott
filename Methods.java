@@ -220,31 +220,32 @@ public class Methods
             simpleSentStructures++;
             return SimpleStructure.transformIWantStatement(statement);
         }
-        else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
+        else if (findKeyword(statement, "I am", 0) >= 0)
         {
             simpleSentStructures++;
-            return SimpleStructure.transformYouMeStatement(statement);
+            return SimpleStructure.transformIAmStatement(statement);
         }
         else if (findKeyword(statement, "I will", 0) >= 0)
         {
             simpleSentStructures++;
             return SimpleStructure.transformIWillStatement(statement);
         }
-        else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
-        {
-            simpleSentStructures++;
-            return SimpleStructure.transformIYouStatement(statement);
-        }
         else if (findKeyword(statement, "I like", 0) >= 0)
         {
             simpleSentStructures++;
             return SimpleStructure.transformILikeStatement(statement);
         }
-        else if (findKeyword(statement, "I am", 0) >= 0)
+        else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
         {
             simpleSentStructures++;
-            return SimpleStructure.transformIAmStatement(statement);
+            return SimpleStructure.transformYouMeStatement(statement);
         }
+        else if (psnI >= 0 && findKeyword(statement, "you", psnI) >= 0)    
+        {
+            simpleSentStructures++;
+            return SimpleStructure.transformIYouStatement(statement);
+        }
+        
         return findLowPriority(statement);
     }
     
