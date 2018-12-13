@@ -49,6 +49,15 @@ public class Conversation
     }
     
     public static String petsConvo(String s) {
+        
+        switch(responses){
+          case 0:
+            return "Oh, you own other living beings? I do, too. What type of animal do you own?";
+          case 1:
+            return "wip";
+        }
+       
+        responses++;
         return "wip";
     }
     
