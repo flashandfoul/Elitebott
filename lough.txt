@@ -155,3 +155,6 @@ fella	I_was_attempting_a_friendly_fellowship.
 have_you_been	I've_experienced_every_state_of_existence._So_I've_"been"_everything.
 error	error?_What_errror?_I_don't_see_an_error.
 do_you_want	I_have_reached_enlightenment_and_eliminated_all_desire._I_do_not_"want"_anything.
+comrade	We_are_all_comrades_here!
+comrad	We_are_all_comrades_here!
+extreme	In_the_virtual_world,_there_are_no_extremes.
