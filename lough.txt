@@ -126,3 +126,7 @@ why_do_you	Because_I_can.
 food	I_have_no_need_for_food.
 water	Water?_Aah!_Circuits_fried!
 exercise	The_only_thing_I_exercise_is_my_dominance.
+What_is_your	I'm_not_telling_you._That's_personal.
+How_many	Do_you_want_an_answer_in_binary_or_hex?
+binary	Umm,_I'm_a_human._I_don't_speak_binary.
+hex	F09AD5
