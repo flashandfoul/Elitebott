@@ -174,7 +174,7 @@ public class Methods
         int myNamePsn = findKeyword(statement,"My name is", 0);
         int iAmPsn = findKeyword(statement, "I am",0);
         int callMe = findKeyword(statement, "call me",0);
-        if (myNamePsn >= 0){
+        if (myNamePsn >= 0 && myNamePsn < statement.length()-11){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
             int spacePsn = statement.substring(myNamePsn+11).indexOf(" ");
@@ -202,7 +202,7 @@ public class Methods
             //name is a comma and a space and a name.
             name =  ", "+statement.substring(myNamePsn+11,myNamePsn+11+lowest);
             
-        }else if(callMe >= 0){
+        }else if(callMe >= 0 && callMe < statement.length()-8){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
             int spacePsn = statement.substring(callMe+8).indexOf(" ");
@@ -231,7 +231,7 @@ public class Methods
             name =  ", "+statement.substring(callMe+8,callMe+8+lowest);
         
 
-        }else if (iAmPsn >= 0){
+        }else if (iAmPsn >= 0 && iAmPsn < statement.length()-5){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
             int spacePsn = statement.substring(iAmPsn+5).indexOf(" ");
