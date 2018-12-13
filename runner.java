@@ -13,6 +13,7 @@ public class runner
 {
     public static void main(String [] args)throws Exception
     {
+        
         Scanner closerreader = new Scanner(new File("closingstatements.txt"));
         ArrayList<String> closers = new ArrayList();
         
