@@ -136,3 +136,8 @@ vanilla	I_prefer_chocolate.
 m&ms	I_prefer_skittles.
 m&m's	I_prefer_skittles.
 peanut	You_know_those_are_bad_for_you.
+precise	Precision_is_less_important_than_accuracy.
+german	I_prefer_binary
+english	I_prefer_binary
+spanish	I_prefer_binary
+french	I_prefer_binary
