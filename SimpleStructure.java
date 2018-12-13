@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class SimpleStructure
 {
+    public static boolean issarcastic=false;
     //Methods called from findSimpleSentenceStructure()
 
     public static String transformIWantToStatement(String statement)
@@ -41,6 +42,8 @@ public class SimpleStructure
         else
             return "I wish I could come up with something to say, but unfortunately my creators don't know how to use RNG. :(";
     }
+    
+    public static boolean issarcastic(){return issarcastic;}
     
     public static String transformIWantStatement(String statement)
     {
@@ -273,7 +276,8 @@ public class SimpleStructure
         if (lastChar.equals("."))
         {
             statement = statement.substring(0, statement.length() - 1);
-        }
+            issarcastic=true;
+        }else{issarcastic=false;}
         
         int psn = Methods.findKeyword (statement, "Say", 0);
         String restOfStatement = statement.substring(psn + 4).trim();
