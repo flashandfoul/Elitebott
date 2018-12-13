@@ -1,0 +1,6 @@
+dog
+cat
+snake
+human
+person
+slave
