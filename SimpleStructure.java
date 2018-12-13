@@ -279,7 +279,7 @@ public class SimpleStructure
         String restOfStatement = statement.substring(psn + 4).trim();
         
         // Give sarcastic response
-        return restOfStatement;
+        return "\"" + restOfStatement + "\"";
     }
     
     public static String transformPronouns(String restOfStatement)
