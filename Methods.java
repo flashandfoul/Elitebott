@@ -105,7 +105,7 @@ public class Methods
         {
             // curEntry is the keyword that it's looking for
             curEntry = reader.next();
-            if(findKeyword(statement.replaceAll("_"," "), curEntry, 0) > -1)
+            if(findKeyword(statement, curEntry.replaceAll("_"," "), 0) > -1)
             {
                 response = reader.next();
                 
@@ -140,7 +140,7 @@ public class Methods
         {
             // curEntry is the keyword that it's looking for
             curEntry = reader.next();
-            if(findKeyword(statement.replaceAll("_"," "), curEntry, 0) > -1)
+            if(findKeyword(statement, curEntry.replaceAll("_"," "), 0) > -1)
             {
                 response = reader.next();
                 
@@ -148,7 +148,7 @@ public class Methods
                 response.replaceAll("_", " ");
                 
                 lowPriKeywords++;
-                return response;
+                return "__" + response;
             } else {
                 reader.next();
             }
@@ -239,6 +239,11 @@ public class Methods
         {
             simpleSentStructures++;
             return SimpleStructure.transformILikeStatement(statement);
+        }
+        else if (findKeyword(statement, "I am", 0) >= 0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.transformIAmStatement(statement);
         }
         return findLowPriority(statement);
     }
