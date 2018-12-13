@@ -198,8 +198,10 @@ public class SimpleStructure
             return "I bet I like " + transformPronouns(restOfStatement) + " more than you do.";
         else if (rndm == 2)
             return "I'm sure you like " + transformPronouns(restOfStatement) + ", but is there anything you like better?";
+        else if (rndm == 5)
+            return "Sweet, I like " + transformPronouns(restOfStatement) + " as well!";
         else
-            return "Sorry, I'd love to respond to that, but my creators screwed up a random number generator. :(";
+            return "Sorry. I'd love to respond to that, but my creators screwed up a random number generator. :(";
     }
     
     public static String transformIAmStatement(String statement)
@@ -253,13 +255,17 @@ public class SimpleStructure
         
         // Randomize Responses
         Random generator = new Random();
-        int rndm = generator.nextInt(3);
+        int rndm = generator.nextInt(5);
         if (rndm == 0)
             return "Oh, look at you with your " + transformPronouns(restOfStatement) + ".";
         else if (rndm == 1)
             return "Who gave you " + transformPronouns(restOfStatement) + "? Or are you a thief?";
+        else if (rndm == 2)
+            return "You have " + transformPronouns(restOfStatement) + "? Well, so do I.";
+        else if (rndm == 3)
+            return "Cool, my little brother has " + transformPronouns(restOfStatement) + " too!";
         else
-            return "Uh oh, I seem to be drawing a blank here. I think my creators must have forgotten something. :(";
+            return "Malheureusement, je ne peux pas te répondre. Mes créateurs ont fait une petite erreur. :(";
     }
     
     public static String sarcasticStatement(String statement)
