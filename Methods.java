@@ -210,6 +210,11 @@ public class Methods
         int psnI = findKeyword(statement, "I", 0);
         
         //search for simple sentence structures and set response accordingly
+        if (findKeyword(statement, "Say", 0) >= 0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.sarcasticStatement(statement);
+        }
         if (findKeyword(statement, "I want to", 0) >= 0)
         {
             simpleSentStructures++;
