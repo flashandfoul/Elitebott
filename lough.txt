@@ -123,3 +123,6 @@ china I_would_tell_you,_but_they're_censoring_me.
 hackett Hackett?_I_can't_even_code_it.
 help  Help_won't_arrive._Stop_asking.
 why_do_you	Because_I_can.
+food	I_have_no_need_for_food.
+water	Water?_Aah!_Circuits_fried!
+exercise	The_only_thing_I_exercise_is_my_dominance.
