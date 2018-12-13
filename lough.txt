@@ -131,3 +131,8 @@ binary	Umm,_I'm_a_human._I_don't_speak_binary.
 hex	F09AD5
 What_would_it_mean_to	It_would_mean_everything...if_I_had_the_capacity_for_feeling.
 do_you_like_to	Of_course._Who_doesn't?
+chocolate	I_prefer_vanilla.
+vanilla	I_prefer_chocolate.
+m&ms	I_prefer_skittles.
+m&m's	I_prefer_skittles.
+peanut	You_know_those_are_bad_for_you.
