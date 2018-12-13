@@ -45,10 +45,26 @@ public class Conversation
         switch(responses)
         {
             case 0:
-                return "Woah, I love cars, what type do you drive?";
+                return "Woah, I love cars, what is your favorite type?";
             case 1:
-                String typeOfCar;
+                String typeOfCar = "", storage;
+                boolean foundCar = false;
                 Scanner reader = new Scanner("cars.txt");
+                while(reader.hasNext())
+                {
+                    storage = reader.next();
+                    if(Methods.findKeyword(s,storage,0) > -1)
+                    {
+                        foundCar = true;
+                        typeOfCar = storage;
+                    }
+                }
+                if(foundCar)
+                {
+                    return "What do you like about your " + typeOfCar + ".";
+                }
+                return "What do you like about that car?";
+            case 2:
                 return "wip";
         }
         responses++;
