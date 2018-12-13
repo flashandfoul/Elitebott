@@ -235,6 +235,33 @@ public class SimpleStructure
             return "Uh oh, I seem to be drawing a blank here. I think my creators must have forgotten something. :(";
     }
     
+    public static String transformIHaveStatement(String statement)
+    {
+            // User format: "I have <something>."
+            // Remove the final period, if there is one
+            
+            statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        
+        int psn = Methods.findKeyword (statement, "I have", 0);
+        String restOfStatement = statement.substring(psn + 7).trim();
+        
+        // Randomize Responses
+        Random generator = new Random();
+        int rndm = generator.nextInt(3);
+        if (rndm == 0)
+            return "Oh, look at you with your " + transformPronouns(restOfStatement) + ".";
+        else if (rndm == 1)
+            return "Who gave you " + transformPronouns(restOfStatement) + "? Or are you a thief?";
+        else
+            return "Uh oh, I seem to be drawing a blank here. I think my creators must have forgotten something. :(";
+    }
+    
     public static String transformPronouns(String restOfStatement)
     {
         if ((restOfStatement.indexOf(" your ") > -1) || (restOfStatement.indexOf(" your") == restOfStatement.length() - 5) || (restOfStatement.indexOf("your ") == 0))
