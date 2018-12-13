@@ -37,10 +37,21 @@ public class Conversation
     }
     
     public static void endConversation() {
+        responses = 0;
         inConvo = false;
     }
     
     public static String carsConvo(String s) {
+        switch(responses)
+        {
+            case 0:
+                return "Woah, I love cars, what type do you drive?";
+            case 1:
+                String typeOfCar;
+                Scanner reader = new Scanner("cars.txt");
+                return "wip";
+        }
+        responses++;
         return "wip";
     }
     
