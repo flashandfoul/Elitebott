@@ -12,7 +12,21 @@ public class Conversation
     }
     
     public static String getResponse() { 
-        stuff.add("\\Conversations\\cars");
+        if (inConvo){
+            switch(currentConvo)
+            {
+                case "CARS":
+                    return carsConvo();
+                case "AI":
+                    return aiConvo();
+                case "PETS":
+                    return petsConvo();
+                default:
+                    return "ERROR: in conversation! No conversation keyword detected!";
+            }
+        
+        
+    }
         return "wip"; 
     }
     
@@ -24,4 +38,18 @@ public class Conversation
     public static void endConversation() {
         inConvo = false;
     }
+    
+    public static String carsConvo() {
+        return "wip";
+    }
+    
+    public static String aiConvo() {
+        return "wip";
+    }
+    
+    public static String petsConvo() {
+        return "wip";
+    }
+    
+    
 }
