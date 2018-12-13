@@ -85,7 +85,7 @@ public class SimpleStructure
         else if (rndm == 2)
             return "Okay, maybe I do " + transformPronouns(restOfStatement) + " you. What of it?";
         else if (rndm == 3)
-            return "Don't tell anyone that I " + transformPronouns(restOfStatement) + ", especially your parents.";
+            return "Don't tell anyone that I " + transformPronouns(restOfStatement) + " you, especially your parents.";
         else if (rndm == 4)
             return "I'm confused. Why would I " + transformPronouns(restOfStatement) + " you?";
         else
