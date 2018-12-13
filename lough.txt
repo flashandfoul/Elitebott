@@ -119,3 +119,6 @@ bonjour	Tu_es_une_baguette.
 france	Je_suis_une_baguette.
 time	Ah,_my_dear_friend,_time_is_but_a_figment_of_your_imagination.
 howdy	Howdy,_partner!_Are_you_ready_for_some_cattle_rustlin'_fun?
+china I_would_tell_you,_but_they're_censoring_me.
+hackett Hackett?_I_can't_even_code_it.
+help  Help_won't_arrive._Stop_asking.
