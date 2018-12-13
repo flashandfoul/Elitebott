@@ -26,7 +26,7 @@ public class Methods
                
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
         if(Conversation.inConversation())
-            response = maybeAddName(Conversation.getResponse());
+            response = maybeAddName(Conversation.getResponse(statement));
             
         
         // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
@@ -117,7 +117,7 @@ public class Methods
                 {
                     Conversation.startConversation(response.substring(19));
                     conversationsStarted++;
-                    return Conversation.getResponse();
+                    return Conversation.getResponse(statement);
                 }
                 highPriKeywords++;
                 return response;
