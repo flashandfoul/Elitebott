@@ -37,10 +37,21 @@ public class Conversation
     }
     
     public static void endConversation() {
+        responses = 0;
         inConvo = false;
     }
     
     public static String carsConvo(String s) {
+        switch(responses)
+        {
+            case 0:
+                return "Woah, I love cars, what type do you drive?";
+            case 1:
+                String typeOfCar;
+                Scanner reader = new Scanner("cars.txt");
+                return "wip";
+        }
+        responses++;
         return "wip";
     }
     
@@ -49,6 +60,15 @@ public class Conversation
     }
     
     public static String petsConvo(String s) {
+        responses++;
+        switch(responses-1){
+          case 0:
+            return "Oh, you own other living beings? I do, too. What type do you own?";
+          case 1:
+          
+            return "wip";
+        }
+       
         return "wip";
     }
     

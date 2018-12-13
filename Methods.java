@@ -113,7 +113,7 @@ public class Methods
                 response.replaceAll("_", " ");
                 
                 // WIP-this will eventually start a conversation about a topic, if it warrants
-                if(findKeyword(response, "START CONVERSATION", 0) > -1)
+                if(findKeyword(response, "CONVERSATION", 0) > -1)
                 {
                     Conversation.startConversation(response.substring(19));
                     conversationsStarted++;
@@ -269,6 +269,11 @@ public class Methods
         int psnI = findKeyword(statement, "I", 0);
         
         //search for simple sentence structures and set response accordingly
+        if (findKeyword(statement, "Say", 0) >= 0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.sarcasticStatement(statement);
+        }
         if (findKeyword(statement, "I want to", 0) >= 0)
         {
             simpleSentStructures++;
