@@ -26,7 +26,20 @@ public class SimpleStructure
             
         int psn = Methods.findKeyword(statement, "I want to", 0);
         String restOfStatement = statement.substring(psn + 9).trim();
-        return "What would it mean to " + transformPronouns(restOfStatement) + "?";
+        
+        // Randomize Responses
+        Random generator = new Random();
+        int rndm = generator.nextInt(5);
+        if (rndm == 0)
+            return "Are you really certain that you want to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 1)
+            return "I think you don't actually want to " + transformPronouns(restOfStatement) + ", you're just trying to stall.";
+        else if (rndm == 2)
+            return "You can't fool me, I know you totally don't want to " + transformPronouns(restOfStatement) + "!";
+        else if (rndm == 3)
+            return "I can see through your lies. It is actually I who wants to " + transformPronouns(restOfStatement) + ", not you!";
+        else
+            return "I wish I could come up with something to say, but unfortunately my creators don't know how to use RNG. :(";
     }
     
     public static String transformIWantStatement(String statement)
@@ -44,11 +57,12 @@ public class SimpleStructure
     
         int psn = Methods.findKeyword (statement, "I want", 0);
         String restOfStatement = statement.substring(psn + 7).trim();
+        
         // Randomize Responses
         Random generator = new Random();
-        int rndm = generator.nextInt(4);
+        int rndm = generator.nextInt(5);
         if (rndm == 0)
-            return "Would you really be happy if you had " + transformPronouns(restOfStatement) + "?";
+            return "Would you really be content if you had " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 1)
             return "I want " + transformPronouns(restOfStatement) + ", too, but you don't see me begging.";
         else if (rndm == 2)
@@ -56,7 +70,7 @@ public class SimpleStructure
         else if (rndm == 3)
            return "Go get " + transformPronouns(restOfStatement) + " yourself instead of asking me.";
         else
-            return "Uhh, sorry, you're confusing... Just kidding, my creators don't know how to randomize.";
+            return "Uhh, sorry, you're confusing... Just kidding, my creators don't know how to randomize. :(";
     }
     
     public static String transformYouMeStatement(String statement)
@@ -75,9 +89,10 @@ public class SimpleStructure
         int psnOfMe = Methods.findKeyword (statement, "me", psnOfYou + 3);
             
         String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+        
         // Randomize Responses
         Random generator = new Random();
-        int rndm = generator.nextInt(5);
+        int rndm = generator.nextInt(6);
         if (rndm == 0)
             return "What makes you think that I " + transformPronouns(restOfStatement) + " you?";
         else if (rndm == 1)
@@ -89,7 +104,7 @@ public class SimpleStructure
         else if (rndm == 4)
             return "I'm confused. Why would I " + transformPronouns(restOfStatement) + " you?";
         else
-            return "Uhh, you confused me. That or my creators screwed up the RNG. Again.";
+            return "Uhh, you confused me. Either that or my creators screwed up the RNG. Again. :(";
     }
     
     public static String transformIWillStatement(String statement)
@@ -110,15 +125,21 @@ public class SimpleStructure
         
         // Randomize Responses
         Random generator = new Random();
-        int rndm = generator.nextInt(4);
+        int rndm = generator.nextInt(7);
         if (rndm == 0)
             return "How are you going to " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 1)
             return "Why are you going to " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 2)
             return "When are you going to " + transformPronouns(restOfStatement) + "?";
-        else
+        else if (rndm == 3)
             return "Who are you going to " + transformPronouns(restOfStatement) + " with?";
+        else if (rndm == 4)
+            return "Where are you going to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 5)
+            return "What do you mean? Are you really saying that you're going to " + transformPronouns(restOfStatement) + "?";
+        else
+            return "Sorry, my brain seems to be experiencing a minor malfunction due to incorrectly programmed RNG. :(";
     }
     
     public static String transformIYouStatement(String statement)
@@ -134,10 +155,21 @@ public class SimpleStructure
         }
             
         int psnOfI = Methods.findKeyword (statement, "I", 0);
-            int psnOfYou = Methods.findKeyword (statement, "you", psnOfI + 2);
-            
+        int psnOfYou = Methods.findKeyword (statement, "you", psnOfI + 2);
+        
         String restOfStatement = statement.substring(psnOfI + 2, psnOfYou).trim();
-        return "Why do you " + restOfStatement + " me?";
+        
+        // Randomize Statements
+        Random generator = new Random();
+        int rndm = generator.nextInt(4);
+        if (rndm == 0)
+            return "Um, why do you " + transformPronouns(restOfStatement) + " me?";
+        else if (rndm == 1)
+            return "Who said it was okay for you to " + transformPronouns(restOfStatement) + " me?";
+        else if (rndm == 2)
+            return "Hey, that's pretty neat! I " + transformPronouns(restOfStatement) + " you too!";
+        else
+            return "Oops, I guess the cat's got my tongue. Darn you silly creators! :(";
     }
     
     
@@ -159,15 +191,44 @@ public class SimpleStructure
         
         // Randomize Statements
         Random generator = new Random();
-        int rndm = generator.nextInt(3);
+        int rndm = generator.nextInt(4);
         if (rndm == 0)
             return "Why do you like " + transformPronouns(restOfStatement) + "?";
         else if (rndm == 1)
             return "I bet I like " + transformPronouns(restOfStatement) + " more than you.";
         else if (rndm == 2)
-            return "Is there anything you like better?";
+            return "I'm sure you like " + transformPronouns(restOfStatement) + ", but is there anything you like better?";
         else
-            return "Sorry, I'd love to respond to that, but my creators screwed up a random number generator.";
+            return "Sorry, I'd love to respond to that, but my creators screwed up a random number generator. :(";
+    }
+    
+    public static String transformIAmStatement(String statement)
+    {
+            // User format: "I am <something>."
+            // Remove the final period, if there is one
+            
+            statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        
+        int psn = Methods.findKeyword (statement, "I am", 0);
+        String restOfStatement = statement.substring(psn + 7).trim();
+        
+        // Randomize Responses
+        Random generator = new Random();
+        int rndm = generator.nextInt(4);
+        if (rndm == 0)
+            return "Ah, I see. I am " + transformPronouns(restOfStatement) + " too.";
+        else if (rndm == 1)
+            return "When did you decide that you wanted to be " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 2)
+            return "How is the fact that you are " + transformPronouns(restOfStatement) + " relevant?";
+        else
+            return "Uh oh, I seem to be drawing a blank here. I think my creators must have forgotten something. :(";
     }
     
     public static String transformPronouns(String restOfStatement)

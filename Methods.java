@@ -240,6 +240,11 @@ public class Methods
             simpleSentStructures++;
             return SimpleStructure.transformILikeStatement(statement);
         }
+        else if (findKeyword(statement, "I am", 0) >= 0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.transformIAmStatement(statement);
+        }
         return findLowPriority(statement);
     }
     
