@@ -148,7 +148,7 @@ public class Methods
                 response.replaceAll("_", " ");
                 
                 lowPriKeywords++;
-                return response;
+                return "__" + response;
             } else {
                 reader.next();
             }
