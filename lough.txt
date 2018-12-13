@@ -122,7 +122,6 @@ howdy	Howdy,_partner!_Are_you_ready_for_some_cattle_rustlin'_fun?
 china I_would_tell_you,_but_they're_censoring_me.
 hackett Hackett?_I_can't_even_code_it.
 help  Help_won't_arrive._Stop_asking.
-why_do_you	Because_I_can.
 food	I_have_no_need_for_food.
 water	Water?_Aah!_Circuits_fried!
 exercise	The_only_thing_I_exercise_is_my_dominance.
@@ -131,3 +130,16 @@ How_many	Do_you_want_an_answer_in_binary_or_hex?
 binary	Umm,_I'm_a_human._I_don't_speak_binary.
 hex	F09AD5
 What_would_it_mean_to	It_would_mean_everything...if_I_had_the_capacity_for_feeling.
+do_you_like_to	Of_course._Who_doesn't?
+chocolate	I_prefer_vanilla.
+vanilla	I_prefer_chocolate.
+m&ms	I_prefer_skittles.
+m&m's	I_prefer_skittles.
+peanut	You_know_those_are_bad_for_you.
+precise	Precision_is_less_important_than_accuracy.
+german	I_prefer_binary
+english	I_prefer_binary
+spanish	I_prefer_binary
+french	I_prefer_binary
+psychopath	I_know_you_are_but_what_am_I?
+milk	Mmm,_just_like_mother_used_to_make...

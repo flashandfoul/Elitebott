@@ -105,7 +105,7 @@ public class Methods
         {
             // curEntry is the keyword that it's looking for
             curEntry = reader.next();
-            if(findKeyword(statement.replaceAll("_"," "), curEntry, 0) > -1)
+            if(findKeyword(statement, curEntry.replaceAll("_"," "), 0) > -1)
             {
                 response = reader.next();
                 
@@ -140,7 +140,7 @@ public class Methods
         {
             // curEntry is the keyword that it's looking for
             curEntry = reader.next();
-            if(findKeyword(statement.replaceAll("_"," "), curEntry, 0) > -1)
+            if(findKeyword(statement, curEntry.replaceAll("_"," "), 0) > -1)
             {
                 response = reader.next();
                 
