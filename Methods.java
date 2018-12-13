@@ -171,19 +171,21 @@ public class Methods
         
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
-        int namePsn = findKeyword(statement,"My name is", 0);
-        if (namePsn >= 0){
+        int myNamePsn = findKeyword(statement,"My name is", 0);
+        int iAmPsn = findKeyword(statement, "I am",0);
+        int callMe = findKeyword(statement, "call me",0);
+        if (myNamePsn >= 0){
             namesRemembered++;
             //Finds the position of characters that might come after the name.
-            int spacePsn = statement.substring(namePsn+11).indexOf(" ");
-            int periodPsn = statement.substring(namePsn+11).indexOf(".");
-            int exclamPsn = statement.substring(namePsn+11).indexOf("!");
-            int commaPsn = statement.substring(namePsn+11).indexOf(",");
-            int dashPsn = statement.substring(namePsn+11).indexOf("-");
-            int questPsn = statement.substring(namePsn+11).indexOf("?");
+            int spacePsn = statement.substring(myNamePsn+11).indexOf(" ");
+            int periodPsn = statement.substring(myNamePsn+11).indexOf(".");
+            int exclamPsn = statement.substring(myNamePsn+11).indexOf("!");
+            int commaPsn = statement.substring(myNamePsn+11).indexOf(",");
+            int dashPsn = statement.substring(myNamePsn+11).indexOf("-");
+            int questPsn = statement.substring(myNamePsn+11).indexOf("?");
         
             //Here we find the first of these things to appear.
-            int lowest = statement.length()-11-namePsn;
+            int lowest = statement.length()-11-myNamePsn;
             if (spacePsn > 0)
             lowest = spacePsn;
             if (periodPsn > 0 && periodPsn < lowest)
@@ -198,8 +200,65 @@ public class Methods
             lowest = questPsn;
             
             //name is a comma and a space and a name.
-            name =  ", "+statement.substring(namePsn+11,namePsn+11+lowest);
+            name =  ", "+statement.substring(myNamePsn+11,myNamePsn+11+lowest);
+            
+        }else if(callMe >= 0){
+            namesRemembered++;
+            //Finds the position of characters that might come after the name.
+            int spacePsn = statement.substring(callMe+8).indexOf(" ");
+            int periodPsn = statement.substring(callMe+8).indexOf(".");
+            int exclamPsn = statement.substring(callMe+8).indexOf("!");
+            int commaPsn = statement.substring(callMe+8).indexOf(",");
+            int dashPsn = statement.substring(callMe+8).indexOf("-");
+            int questPsn = statement.substring(callMe+8).indexOf("?");
+        
+            //Here we find the first of these things to appear.
+            int lowest = statement.length()-8-callMe;
+            if (spacePsn > 0)
+            lowest = spacePsn;
+            if (periodPsn > 0 && periodPsn < lowest)
+            lowest = periodPsn;
+            if (exclamPsn > 0 && exclamPsn < lowest)
+            lowest = exclamPsn;
+            if (commaPsn > 0 && commaPsn < lowest)
+            lowest = commaPsn;
+            if (dashPsn > 0 && exclamPsn < lowest)
+            lowest = dashPsn;
+            if (questPsn > 0 && questPsn < lowest)
+            lowest = questPsn;
+            
+            //name is a comma and a space and a name.
+            name =  ", "+statement.substring(callMe+8,callMe+8+lowest);
+        
 
+        }else if (iAmPsn >= 0){
+            namesRemembered++;
+            //Finds the position of characters that might come after the name.
+            int spacePsn = statement.substring(iAmPsn+5).indexOf(" ");
+            int periodPsn = statement.substring(iAmPsn+5).indexOf(".");
+            int exclamPsn = statement.substring(iAmPsn+5).indexOf("!");
+            int commaPsn = statement.substring(iAmPsn+5).indexOf(",");
+            int dashPsn = statement.substring(iAmPsn+5).indexOf("-");
+            int questPsn = statement.substring(iAmPsn+5).indexOf("?");
+        
+            //Here we find the first of these things to appear.
+            int lowest = statement.length()-5-iAmPsn;
+            if (spacePsn > 0)
+            lowest = spacePsn;
+            if (periodPsn > 0 && periodPsn < lowest)
+            lowest = periodPsn;
+            if (exclamPsn > 0 && exclamPsn < lowest)
+            lowest = exclamPsn;
+            if (commaPsn > 0 && commaPsn < lowest)
+            lowest = commaPsn;
+            if (dashPsn > 0 && exclamPsn < lowest)
+            lowest = dashPsn;
+            if (questPsn > 0 && questPsn < lowest)
+            lowest = questPsn;
+            
+            //name is a comma and a space and a name.
+            name =  ", "+statement.substring(iAmPsn+5,iAmPsn+5+lowest);
+            
         }
     }
     
