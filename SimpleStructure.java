@@ -262,6 +262,26 @@ public class SimpleStructure
             return "Uh oh, I seem to be drawing a blank here. I think my creators must have forgotten something. :(";
     }
     
+    public static String sarcasticStatement(String statement)
+    {
+            // User format: "Say <something>."
+            // Remove the final period, if there is one
+            
+            statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        
+        int psn = Methods.findKeyword (statement, "Say", 0);
+        String restOfStatement = statement.substring(psn + 4).trim();
+        
+        // Give sarcastic response
+        return "\"" + restOfStatement + "\"";
+    }
+    
     public static String transformPronouns(String restOfStatement)
     {
         if ((restOfStatement.indexOf(" your ") > -1) || (restOfStatement.indexOf(" your") == restOfStatement.length() - 5) || (restOfStatement.indexOf("your ") == 0))
