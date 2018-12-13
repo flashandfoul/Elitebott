@@ -114,3 +114,8 @@ dogma   Is_there_really_any_value_to_a_dogma?
 epic    That_is_pretty_epic.
 why     Why?_Because_I_said_so,_that's_why!
 understand      Sometimes_you_don't_have_to_understand.
+rain	I've_always_wanted_to_go_outside_and_dance_in_the_rain...
+bonjour	Tu_es_une_baguette.
+france	Je_suis_une_baguette.
+time	Ah,_my_dear_friend,_time_is_but_a_figment_of_your_imagination.
+howdy	Howdy,_partner!_Are_you_ready_for_some_cattle_rustlin'_fun?
