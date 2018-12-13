@@ -147,3 +147,5 @@ squash	squish,_squash
 lie	You_humans_always_lie.
 weather	Rain_rain,_go_away,_Snow_again_some_other_day.
 my_favorite	I_couldn't_care_less_about_your_trivial_preferences.
+refuse	*waterboards_user*
+hooray	I_admire_such_enthusiasm.
