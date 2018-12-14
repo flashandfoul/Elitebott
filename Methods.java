@@ -311,8 +311,8 @@ public class Methods
             simpleSentStructures++;
             return SimpleStructure.transformIYouStatement(statement);
         }
-        
-        return findLowPriority(statement);
+        else
+            return findLowPriority(statement);
     }
     
     private static String maybeAddName(String response)

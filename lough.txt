@@ -159,3 +159,14 @@ comrade	We_are_all_comrades_here!
 comrad	We_are_all_comrades_here!
 extreme	In_the_virtual_world,_there_are_no_extremes.
 remind 	I_once_ate_a_ladybug,_and_it_actually_wasn't_too_bad.
+your_name	I've_already_told_you_my_name,_now_scram!
+anime	I_personally_prefer_the_manga.
+manga	I_personally_prefer_the_anime.
+lobster	Burritos_are_pretty_depressing,_eh?
+burrito	Lobsters_are_pretty_sturdy,_eh?
+baked_beans	Mmmm,_I_love_the_smell_of_baked_beans_in_the_morning!
+Avogadro's_Number	Did_you_know_that_I_used_to_have_a_pet_mole_named_Avogadro?
+Avogadros_Number	Did_you_know_that_I_used_to_have_a_pet_avogadro_named_Mole?
+trestle	I_love_me_some_high-quality_bridge_design_:)
+tabbyhanson	Hey,_that's_my_favorite_Minecraft_Youtuber!
+golf	I_personally_prefer_the_Ford_Focus,_but_the_Volkswagen_Golf_is_a_good_car_nonetheless.
