@@ -158,3 +158,4 @@ do_you_want	I_have_reached_enlightenment_and_eliminated_all_desire._I_do_not_"wa
 comrade	We_are_all_comrades_here!
 comrad	We_are_all_comrades_here!
 extreme	In_the_virtual_world,_there_are_no_extremes.
+remind 	I_once_ate_a_ladybug,_and_it_actually_wasn't_too_bad.
