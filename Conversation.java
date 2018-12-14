@@ -82,10 +82,12 @@ public class Conversation
         responses++;
         switch(responses-1){
           case 0:
-            return "Oh, you own other living beings? I do, too. What type do you own?";
+              return "Oh, you own other living beings? I do, too. What type do you own?";
           case 1:
-          
-            return "wip";
+              String typeOfPet;
+              Scanner reader = new Scanner("pets.txt");
+              
+              return "wip";
         }
        
         return "wip";
