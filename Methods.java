@@ -20,25 +20,27 @@ public class Methods
         return "HELLO, I am ELITEBOT V1 \nSay anything to me!";
     }
     
-    public static void getResponse(String statement) throws InterruptedException
+    public static void getResponse(String statement) throws Exception
     {
         String response;
                
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
-        if(Conversation.inConversation())
+        if(Conversation.inConversation()) {
             response = maybeAddName(Conversation.getResponse(statement));
-            
+        } else {    
         
-        // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
-        // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
-        try {
-        response =  maybeAddName(findHighPriority(statement).replaceAll("_"," "));
-        } catch(IOException e) {
-        response = ("ERROR: " + e);
-        } catch(Exception e) {
-        response = ("ERROR: " + e);
+        
+            // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
+            // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
+            try {
+            response =  maybeAddName(findHighPriority(statement).replaceAll("_"," "));
+            } catch(IOException e) {
+            response = ("ERROR: " + e);
+            } catch(Exception e) {
+            response = ("ERROR: " + e);
+            }
         }
-
+        
         timerStuff.printLikeHuman(getLineBreaks(response));
     }
     
@@ -94,7 +96,7 @@ public class Methods
         return "wip";
     }
     
-    private static String findHighPriority(String statement) throws IOException
+    private static String findHighPriority(String statement) throws Exception
     {
         // init local variables
         Scanner reader = new Scanner(new File("high.txt"));

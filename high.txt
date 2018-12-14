@@ -1,7 +1,12 @@
 cars	START_CONVERSATION_CARS
+car 	START_CONVERSATION_CARS
+drive	START_CONVERSATION_CARS
+dog		START_CONVERSATION_PETS
+cat 	START_CONVERSATION_PETS
+pets	START_CONVERSATION_PETS
+computer 	START_CONVERSATION_AI
+ai	START_CONVERSATION_AI 
+legos	I_used_to_always_play_with_legos_as_a_young_computer,_of_course_mine_were_on_roblox_and_simulated!
 
-pets	START_CONVERSATION_PETS
-ai	START_CONVERSATION_AI 
-legos	I_used_to_always_play_with_legos_as_a_young_computer,_of_course_mine_were_on_roblox_and_simulated!
 
-
+
