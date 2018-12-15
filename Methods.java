@@ -326,11 +326,13 @@ public class Methods
             Boolean endsPeriod = (endChar.equals("."));
             Boolean endsQuest = (endChar.equals("?"));
             Boolean endsExclam = (endChar.equals("!"));
-            
+            Boolean endsEllipse3 = false;
+            Boolean endsEllipse4 = false;
             //Some of you guys created responses with ... and others used ....
-            Boolean endsEllipse3 = (response.substring(response.length()-3).equals("..."));
-            Boolean endsEllipse4 = (response.substring(response.length()-4).equals("...."));
-            
+            if (response.length() > 4){
+                endsEllipse3 = (response.substring(response.length()-3).equals("..."));
+                endsEllipse4 = (response.substring(response.length()-4).equals("...."));
+            }
             //Cuts off last character.
             
             if(endsEllipse4){
