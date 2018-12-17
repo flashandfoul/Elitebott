@@ -5,7 +5,7 @@ import java.io.*;
 public class Methods
 {
     //  init Statics
-    static String name = ", comrade";
+    static String name = ", comrade"; static char temp; static int sentences=0, words=0, letters=0;
     //  These are all variables that will track various things going on in our
     //  program, they will be useful for debugging and some of them will be
     //  displayed to the user upon concluding the conversation through the
@@ -22,8 +22,8 @@ public class Methods
     
     public static void getResponse(String statement) throws Exception
     {
-        String response;
-               
+        String response; int c=0;
+        
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
         if(Conversation.inConversation()) {
             response = maybeAddName(Conversation.getResponse(statement));
@@ -40,8 +40,16 @@ public class Methods
             response = ("ERROR: " + e);
             }
         }
-        
+        response+=" ";
+        for(int i=0;i<statement.length();i++){temp=response.charAt(c); if(temp== ' '){i--; c++;}if(Character.isLetter(temp)){letters++; c++;}}
+        sentences++; words+=wordsinsentence(statement); //sentences, words
         timerStuff.printLikeHuman(getLineBreaks(response));
+    }
+    
+    public static int wordsinsentence(String thething){
+        if(thething==null||thething.isEmpty()){return 0;}
+        String[] words=thething.split("\\s+");
+        return words.length;
     }
     
     private static String getLineBreaks(String s) throws InterruptedException
@@ -358,10 +366,13 @@ public class Methods
     
     public static void getCloser() throws Exception
     {
+        double flesh=(11.8*letters/3/words)+(.39*words/sentences)-15.59;
         String result = "\n" + String.format("%-20s%n","Oh, Goodbye then!");
         result += String.format("%-25s%-10d", "Total chars inputted:",charCount) + "\n";
         result += String.format("%-25s%-10d", "Total words inputted:",wordCount) + "\n";
-        result += String.format("%-25s%-10d", "Total back-and-forths:",backAndForths);
+        result += String.format("%-25s%-10d", "Total back-and-forths:",backAndForths)+ "\n";
+        result +=String.format("%-25s%-3.7f", "Flesch-Kincaid Grade level:",flesh);
+        if(flesh<1){result+="\n"+"Wow, you really need to work on your English skills.";}
         timerStuff.printLikeHuman(result);
     }
     
