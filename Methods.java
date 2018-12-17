@@ -5,14 +5,15 @@ import java.io.*;
 public class Methods
 {
     //  init Statics
-    static String name = ", comrade"; static char temp; static int sentences=0, words=0, letters=0;
+    static String name = ", comrade";
     //  These are all variables that will track various things going on in our
     //  program, they will be useful for debugging and some of them will be
     //  displayed to the user upon concluding the conversation through the
     //  getCloser() and remember() methods.
     public static int wordCount = 0, charCount = 0, backAndForths = 0, lowPriKeywords = 0,
                       highPriKeywords = 0, simpleSentStructures = 0, nonCommittalResponses = 0, 
-                      namesRemembered = 0, namesAdded = 0, conversationsStarted = 0;
+                      namesRemembered = 0, namesAdded = 0, conversationsStarted = 0,
+                      spaces = 0;
     
     
     public static String getOpener()
@@ -22,7 +23,7 @@ public class Methods
     
     public static void getResponse(String statement) throws Exception
     {
-        String response; int c=0;
+        String response; 
         
         // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
         if(Conversation.inConversation()) {
@@ -40,16 +41,8 @@ public class Methods
             response = ("ERROR: " + e);
             }
         }
-        response+=" ";
-        for(int i=0;i<statement.length();i++){temp=response.charAt(c); if(temp== ' '){i--; c++;}if(Character.isLetter(temp)){letters++; c++;}}
-        sentences++; words+=wordsinsentence(statement); //sentences, words
+        
         timerStuff.printLikeHuman(getLineBreaks(response));
-    }
-    
-    public static int wordsinsentence(String thething){
-        if(thething==null||thething.isEmpty()){return 0;}
-        String[] words=thething.split("\\s+");
-        return words.length;
     }
     
     private static String getLineBreaks(String s) throws InterruptedException
@@ -177,7 +170,13 @@ public class Methods
             s.next();
         }
         backAndForths++;
-        
+        for(int i=0;i<statement.length();i++)
+        {
+            if(statement.charAt(i) == ' ')
+            {
+                spaces++;
+            }
+        }
         
         //Look for "My name is ".
         //namePsn will be zero if the statement begins with "my name is ".
@@ -366,7 +365,7 @@ public class Methods
     
     public static void getCloser() throws Exception
     {
-        double flesh=(11.8*letters/3/words)+(.39*words/sentences)-15.59;
+        double flesh=(11.8*(charCount - spaces)/3/wordCount)+(.39*wordCount/backAndForths)-15.59;
         String result = "\n" + String.format("%-20s%n","Oh, Goodbye then!");
         result += String.format("%-25s%-10d", "Total chars inputted:",charCount) + "\n";
         result += String.format("%-25s%-10d", "Total words inputted:",wordCount) + "\n";
