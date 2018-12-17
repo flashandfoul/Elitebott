@@ -319,7 +319,7 @@ public class Methods
     {
         Random randy = new Random();
         // 1/2 of the time, Elitebott will add the user's name to the end of the response.
-        if ((randy.nextInt(2) == 1)&&!SimpleStructure.issarcastic()){
+        if ((randy.nextInt(2) == 1)){
             namesAdded++;
             //Checks to see if the statement ends in a punctuation mark.
             String endChar = response.substring(response.length()-1);
