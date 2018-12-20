@@ -13,7 +13,7 @@ public class Methods
     public static int wordCount = 0, charCount = 0, backAndForths = 0, lowPriKeywords = 0,
                       highPriKeywords = 0, simpleSentStructures = 0, nonCommittalResponses = 0, 
                       namesRemembered = 0, namesAdded = 0, conversationsStarted = 0,
-                      spaces = 0;
+                      spaces = 0, easterEggs = 0;
     
     
     public static String getOpener()
@@ -309,6 +309,16 @@ public class Methods
             simpleSentStructures++;
             return SimpleStructure.transformILikeStatement(statement);
         }
+        else if (findKeyword(statement, "I have to", 0) >= 0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.transformIHaveToStatement(statement);
+        }
+        else if (findKeyword(statement, "I have", 0) >= 0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.transformIHaveStatement(statement);
+        }
         else if (psnYou >= 0 && findKeyword(statement, "me", psnYou) >= 0)
         {
             simpleSentStructures++;
@@ -364,6 +374,16 @@ public class Methods
         return response;
     }
     
+    public static void setEasterEggs (int eggs)
+    {
+        easterEggs = eggs;
+    }
+    
+    public static int getEasterEggs()
+    {
+        return easterEggs;
+    }
+    
     public static void getCloser() throws Exception
     {
         double flesh=(11.8*(charCount - spaces)/3/wordCount)+(.39*wordCount/backAndForths)-15.59;
@@ -371,7 +391,8 @@ public class Methods
         result += String.format("%-25s%-10d", "Total chars inputted:",charCount) + "\n";
         result += String.format("%-25s%-10d", "Total words inputted:",wordCount) + "\n";
         result += String.format("%-25s%-10d", "Total back-and-forths:",backAndForths)+ "\n";
-        result +=String.format("%-25s%-3.7f", "Flesch-Kincaid Grade level:",flesh);
+        result += String.format("%-25s%-10d", "Easter eggs found:",easterEggs) + "\n";
+        result += String.format("%-25s%-3.7f", "Flesch-Kincaid Grade level:",flesh);
         if(flesh<1){result+="\n"+"Wow, you really need to work on your English skills.";}
         timerStuff.printLikeHuman(result);
     }
