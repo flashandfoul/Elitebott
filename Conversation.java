@@ -22,6 +22,8 @@ public class Conversation
                     return aiConvo(s);
                 case "PETS":
                     return petsConvo(s);
+                case "PET":
+                    return petsConvo(s);
                 default:
                     return "ERROR: in conversation! No conversation keyword detected!";
             }
@@ -82,11 +84,28 @@ public class Conversation
         responses++;
         switch(responses-1){
           case 0:
+              responses++;
               return "Oh, you own other living beings? I do, too. What type do you own?";
           case 1:
-              String typeOfPet;
+              String typeOfPet = "", storage;
+              boolean foundPet = false;
               Scanner reader = new Scanner("pets.txt");
-              
+              while (reader.hasNext())
+              {
+                  storage = reader.next();
+                  if(Methods.findKeyword(s, storage, 0) > 1)
+                  {
+                      foundPet = true;
+                      typeOfPet = storage;
+                  }
+              }
+              if (foundPet)
+              {
+                 return "Why do you like your " + typeOfPet + "?"; 
+              }
+              responses++;
+              return "What do you like about that creature?";
+          case 2:
               return "wip";
         }
        
