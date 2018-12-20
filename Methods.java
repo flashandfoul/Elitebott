@@ -25,11 +25,12 @@ public class Methods
     {
         String response; 
         
-        // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.     
+        // CONVERSATION CLASS WIP, for now will never run because Conversation.inConversation will defaultly return 0.
+        /*
         if(Conversation.inConversation()) {
             response = maybeAddName(Conversation.getResponse(statement));
         } else {    
-        
+        */
         
             // TRY CATCH STATEMENT WILL CATCH ANY EXCEPTIONS GIVEN OUT IN THE PROCESS
             // SPECIFICALLY LOOKING FOR IOExceptions FROM ACCESSING TXT DOCUMENTS
@@ -40,7 +41,7 @@ public class Methods
             } catch(Exception e) {
             response = ("ERROR: " + e);
             }
-        }
+        // }
         
         timerStuff.printLikeHuman(getLineBreaks(response));
     }
