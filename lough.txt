@@ -184,3 +184,14 @@ dolphin	We_are_my_favorite_delicacy,_right_up_there_with_cubed_games.
 thomas_the_tank_engine	doo_doo_doo_dooooo_doo_doo_doooooooooooo
 
 
+vegan	Are_you_trying_to_tell_me_that_you_eat_innocent_plants?
+avery	That_Avery_guy_is_a_dashing_young_man,_if_you_ask_me.
+aidan	Man,_Aidan's_such_a_smart_guy!
+gavin	I_want_to_be_just_like_Gavin_when_I_grow_up.
+gabe	Why_is_he_so_wet?
+joey	That's_my_favorite_character_from_Friends.
+joe	I_enjoy_a_good_cup_of_joe_in_the_evening.
+story_problems	Those_are_literally_the_devil.
+binx	bonx
+bonx	binx
+math	Math_was_my_favorite_subject_in_preschool,_but_then_I_was_exposed_to_the_truth...
