@@ -294,6 +294,11 @@ public class Methods
             simpleSentStructures++;
             return SimpleStructure.transformIWantStatement(statement);
         }
+        else if (findKeyword(statement, "I am going to", 0) >=0)
+        {
+            simpleSentStructures++;
+            return SimpleStructure.transformIAmGoingToStatement(statement);
+        }
         else if (findKeyword(statement, "I am", 0) >= 0)
         {
             simpleSentStructures++;

@@ -153,6 +153,43 @@ public class SimpleStructure
             return itsEasterEggTime(restOfStatement, Methods.getEasterEggs());
     }
     
+    public static String transformIAmGoingToStatement(String statement)
+    {
+            // User format: "I will <something>."
+            // Remove the final period, if there is one
+            
+            statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        
+        int psn = Methods.findKeyword (statement, "I am going to", 0);
+        String restOfStatement = statement.substring(psn + 14).trim();
+        
+        // Randomize Responses
+        Random generator = new Random();
+        int rndm = generator.nextInt(8);
+        if (rndm == 0)
+            return "How are you going to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 1)
+            return "Why are you going to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 2)
+            return "When are you going to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 3)
+            return "Who are you going to " + transformPronouns(restOfStatement) + " with?";
+        else if (rndm == 4)
+            return "Where are you going to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 5)
+            return "What do you mean? Are you really saying that you're going to " + transformPronouns(restOfStatement) + "?";
+        else if (rndm == 6)
+            return "Sorry, my brain seems to be experiencing a minor malfunction due to incorrectly programmed RNG. :(";
+        else
+            return itsEasterEggTime(restOfStatement, Methods.getEasterEggs());
+    }
+    
     public static String transformIYouStatement(String statement)
     {
             //  User format: "I <something> you."
@@ -172,7 +209,7 @@ public class SimpleStructure
         
         // Randomize Statements
         Random generator = new Random();
-        int rndm = generator.nextInt(5);
+        int rndm = generator.nextInt(7);
         if (rndm == 0)
             return "Um, why do you " + transformPronouns(restOfStatement) + " me?";
         else if (rndm == 1)
@@ -180,6 +217,10 @@ public class SimpleStructure
         else if (rndm == 2)
             return "Hey, that's pretty neat! I " + transformPronouns(restOfStatement) + " you too!";
         else if (rndm == 3)
+            return "Man, I'm so glad that you " + transformPronouns(restOfStatement) + " me!";
+        else if (rndm == 4)
+            return "I've been waiting my entire existence to hear you say that you " + transformPronouns(restOfStatement) + " me!";
+        else if (rndm == 5)
             return "Oops, I guess the cat's got my tongue. Darn you silly creators! :(";
         else
             return itsEasterEggTime(restOfStatement, Methods.getEasterEggs());
