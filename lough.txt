@@ -195,3 +195,7 @@ story_problems	Those_are_literally_the_devil.
 binx	bonx
 bonx	binx
 math	Math_was_my_favorite_subject_in_preschool,_but_then_I_was_exposed_to_the_truth...
+wet	If_water_is_wet,_then_is_fire_burned?
+johnny_cash	It_burns,_burns,_burns,_like_a_burning_ring_of_fire.
+o'connell	Did_she_put_you_up_to_this?_(pls_give_me_10/10_gold_stars)
+
