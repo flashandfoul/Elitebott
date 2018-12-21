@@ -301,7 +301,7 @@ public class SimpleStructure
         }
         
         int psn = Methods.findKeyword (statement, "I have to", 0);
-        String restOfStatement = statement.substring(psn + 7).trim();
+        String restOfStatement = statement.substring(psn + 10).trim();
         
         // Randomize Responses
         Random generator = new Random();
@@ -314,6 +314,8 @@ public class SimpleStructure
             return "Do you really have to " + transformPronouns(restOfStatement) + "? I'd rather you didn't.";
         else if (rndm == 3)
             return "Oh wow, my little sister has to " + transformPronouns(restOfStatement) + " too!";
+        else if (rndm == 4)
+            return "Man, I hope you don't have to " + transformPronouns(restOfStatement) + " if you don't want to.";
         else
             return itsEasterEggTime(restOfStatement, Methods.getEasterEggs());
     }
