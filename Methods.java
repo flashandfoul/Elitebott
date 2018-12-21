@@ -116,13 +116,13 @@ public class Methods
                 // replaces the underscores with spaces so it's outputtable
                 response.replaceAll("_", " ");
                 
-                // WIP-this will eventually start a conversation about a topic, if it warrants
+                /* WIP-this will eventually start a conversation about a topic, if it warrants
                 if(findKeyword(response, "CONVERSATION", 0) > -1)
                 {
                     Conversation.startConversation(response.substring(19));
                     conversationsStarted++;
                     return Conversation.getResponse(statement);
-                }
+                } */
                 highPriKeywords++;
                 return response;
             } else
